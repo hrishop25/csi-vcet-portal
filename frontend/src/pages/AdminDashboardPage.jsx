@@ -294,7 +294,7 @@ export const AdminDashboardPage = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search candidates by name, email, roll number, or domain..."
-                className="w-full pl-9 pr-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
+                className="w-full pl-9 pr-3 py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-blue-600 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
               />
               {searchTerm && (
                 <button
@@ -311,7 +311,7 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterYear}
                 onChange={(e) => setFilterYear(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-blue-600 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40 focus:outline-none font-semibold text-slate-900 dark:text-white"
               >
                 <option value="All">All Years</option>
                 <option value="FE">First Year (FE)</option>
@@ -326,7 +326,7 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterDept}
                 onChange={(e) => setFilterDept(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-blue-600 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40 focus:outline-none font-semibold text-slate-900 dark:text-white"
               >
                 <option value="All">All Departments</option>
                 <option value="CSE(DS)">CSE(DS)</option>
@@ -344,7 +344,7 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:border-blue-600 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900/40 focus:outline-none font-semibold text-slate-900 dark:text-white"
               >
                 <option value="All">All Statuses</option>
                 <option value="Pending">Pending</option>
@@ -636,20 +636,20 @@ export const AdminDashboardPage = () => {
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
             <div className="relative bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform transition-all">
               {/* Header */}
-              <div className="bg-slate-900 text-white p-6 flex justify-between items-start">
+              <div className="bg-[#0f2862] text-white p-6 flex justify-between items-start">
                 <div>
                   <div className="flex items-center space-x-2">
                     <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950">
                       {selectedApp.year}
                     </span>
-                    <span className="text-xs text-slate-300 font-medium">{selectedApp.department}</span>
+                    <span className="text-xs text-blue-200 font-medium">{selectedApp.department}</span>
                   </div>
                   <h3 className="text-xl font-black text-white mt-1">{selectedApp.name}</h3>
-                  <p className="text-xs text-slate-300">{selectedApp.email} • {selectedApp.phone || 'No phone'}</p>
+                  <p className="text-xs text-blue-100/90">{selectedApp.email} • {selectedApp.phone || 'No phone'}</p>
                 </div>
                 <button
                   onClick={() => setSelectedApp(null)}
-                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800"
+                  className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -716,7 +716,7 @@ export const AdminDashboardPage = () => {
                       value={slotInput}
                       onChange={(e) => setSlotInput(e.target.value)}
                       placeholder="e.g. 2026-10-15 03:00 PM, Lab 402"
-                      className="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
+                      className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
 
@@ -729,7 +729,7 @@ export const AdminDashboardPage = () => {
                       value={notesInput}
                       onChange={(e) => setNotesInput(e.target.value)}
                       placeholder="Add interviewer remarks, live coding score, or notes..."
-                      className="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
+                      className="w-full px-3 py-2 text-xs bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-600 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
                 </div>

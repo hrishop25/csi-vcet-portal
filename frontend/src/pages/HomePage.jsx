@@ -38,16 +38,16 @@ export const HomePage = ({ setActiveView, onOpenApply }) => {
 
       {/* 5. Collegiate Recruitment CTA Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 dark:from-slate-950 dark:via-blue-950/80 dark:to-slate-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-gradient-to-r from-[#0f2862] via-[#1e3a8a] to-[#0f2862] rounded-3xl p-8 sm:p-12 text-white shadow-xl border border-blue-900/40 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-3 max-w-xl text-left">
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-400/30">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold border border-amber-300/40">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>Academic Tenure 2026-27 Selection</span>
             </div>
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight">
+            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
               Join the Executive Roster of CSI VCET
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed font-sans">
               Open to undergraduate students across Computer Engineering, IT, CSE(DS), and allied engineering departments. Step into student leadership, lead national hackathons, and contribute to chapter codebases.
             </p>
           </div>
@@ -55,13 +55,13 @@ export const HomePage = ({ setActiveView, onOpenApply }) => {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <button
               onClick={onOpenApply}
-              className="px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs sm:text-sm rounded-xl shadow-lg transition-transform hover:scale-105"
+              className="px-6 py-3.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl shadow-lg transition-transform hover:scale-105"
             >
               Apply for Council 2026-27
             </button>
             <button
               onClick={() => setActiveView('members')}
-              className="px-5 py-3.5 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm rounded-xl border border-white/20 transition-colors"
+              className="px-5 py-3.5 bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm rounded-xl border border-white/25 transition-colors"
             >
               View Full Council Roster
             </button>

@@ -17,15 +17,15 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800 shadow-xs transition-colors duration-200">
       {/* Top Institutional Bar */}
-      <div className="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div className="bg-slate-100 dark:bg-slate-950 text-slate-700 dark:text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2 font-medium tracking-wide text-[11px] sm:text-xs truncate">
-            <GraduationCap className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
-            <span className="font-semibold text-slate-800 dark:text-slate-200">
+            <GraduationCap className="w-3.5 h-3.5 text-blue-700 dark:text-blue-400 shrink-0" />
+            <span className="font-bold text-slate-900 dark:text-slate-100">
               Vidyavardhini's College of Engineering & Technology, Vasai
             </span>
             <span className="hidden md:inline text-slate-400 dark:text-slate-600">•</span>
-            <span className="hidden md:inline text-slate-500 dark:text-slate-400">
+            <span className="hidden md:inline text-slate-600 dark:text-slate-400 font-medium">
               Autonomous Institute • NAAC 'A' & NBA Accredited
             </span>
           </div>
@@ -33,12 +33,12 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
           <div className="flex items-center space-x-3 shrink-0 text-[11px]">
             <a
               href="tel:+917972019446"
-              className="hidden lg:flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="hidden lg:flex items-center space-x-1 text-slate-700 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white font-medium transition-colors"
             >
               <Phone className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
               <span>0250 233 8234</span>
             </a>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800/80">
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-bold bg-emerald-100 text-emerald-900 border border-emerald-300 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800/80">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               CSI 2025-26 Active Chapter
             </span>
@@ -62,10 +62,10 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-tight">
+              <span className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-950 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-tight">
                 The Computer Society
               </span>
-              <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 tracking-wide uppercase">
+              <p className="text-[11px] font-bold text-slate-600 dark:text-slate-400 tracking-wide uppercase">
                 CSI Student Chapter • VCET Vasai
               </p>
             </div>
@@ -80,7 +80,7 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
                 className={`px-3 py-1.5 text-sm font-semibold rounded-lg transition-colors font-sans ${
                   activeView === link.id
                     ? 'text-blue-700 dark:text-blue-400 font-bold bg-blue-50/90 dark:bg-blue-950/60'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                    : 'text-slate-800 dark:text-slate-200 hover:text-blue-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 {link.label}
@@ -95,7 +95,7 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
             {/* Apply Button */}
             <button
               onClick={onOpenApply}
-              className="px-4 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-xl shadow-xs hover:shadow-md border border-blue-400/30 hover:border-cyan-400 transition-all flex items-center space-x-1.5"
+              className="px-4 py-2 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-xl shadow-xs hover:shadow-md border border-blue-500/30 transition-all flex items-center space-x-1.5"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>Apply</span>
@@ -129,8 +129,8 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
                   onClick={() => setActiveView('admin-login')}
                   className={`inline-flex items-center space-x-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-colors ${
                     activeView === 'admin-login'
-                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 border-blue-300'
-                      : 'text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border-slate-300 dark:border-slate-700'
+                      ? 'bg-blue-100 dark:bg-blue-900 text-blue-950 dark:text-blue-100 border-blue-300 font-bold'
+                      : 'text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border-slate-300 dark:border-slate-700 font-semibold'
                   }`}
                   title="Restricted Committee Portal"
                 >

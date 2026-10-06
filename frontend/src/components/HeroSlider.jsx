@@ -73,26 +73,26 @@ export const HeroSlider = () => {
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              {/* Background Photo with Collegiate Blue Tint (Matching Reference Photo Style!) */}
+              {/* Background Photo with Luminous Collegiate Blue Tint */}
               <img
                 src={slide.image}
                 alt={slide.alt}
-                className="w-full h-full object-cover object-center filter brightness-[0.78] contrast-[1.10]"
+                className="w-full h-full object-cover object-center filter brightness-[0.92] contrast-[1.08] dark:brightness-[0.78] dark:contrast-[1.12]"
               />
 
-              {/* Collegiate Royal Blue Photo Tint (Matches the exact dark blue/indigo color cast in reference screenshot) */}
-              <div className="absolute inset-0 bg-[#0f2862]/30 dark:bg-[#0f172a]/50 mix-blend-multiply pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
+              {/* Collegiate Royal Blue Photo Tint (Matches reference blue color cast) */}
+              <div className="absolute inset-0 bg-[#0f2862]/35 dark:bg-[#0a1128]/55 mix-blend-multiply pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent pointer-events-none" />
 
-              {/* Bottom-Right Overlay Text (Modern Outfit & Plus Jakarta Sans typography) */}
-              <div className="absolute bottom-10 right-6 sm:bottom-12 sm:right-12 z-20 text-right max-w-xl pointer-events-none">
-                <p className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] leading-tight tracking-tight">
+              {/* Bottom-Right Overlay Text (Crisp, High-Contrast Typography) */}
+              <div className="absolute bottom-8 right-6 sm:bottom-12 sm:right-12 z-20 text-right max-w-xl pointer-events-none">
+                <p className="font-heading text-lg sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)] leading-tight tracking-tight">
                   {slide.collegeLine}
                 </p>
-                <p className="font-heading text-base sm:text-xl md:text-2xl font-bold text-blue-200 drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)] mt-1 tracking-tight">
+                <p className="font-heading text-base sm:text-xl md:text-2xl font-bold text-amber-300 dark:text-blue-200 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] mt-1 tracking-tight">
                   {slide.societyLine}
                 </p>
-                <p className="text-xs sm:text-sm text-slate-200 font-sans tracking-wide mt-1.5 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)] hidden sm:block leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-100 font-sans tracking-wide mt-1.5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] hidden sm:block leading-relaxed font-medium">
                   {slide.caption}
                 </p>
               </div>

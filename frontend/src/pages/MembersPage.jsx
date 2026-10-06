@@ -110,14 +110,14 @@ export const MembersPage = ({ onOpenApply }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Page Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 text-xs font-bold border border-blue-200 dark:border-blue-800">
-            <GraduationCap className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-900 dark:text-blue-300 text-xs font-bold border border-blue-200 dark:border-blue-800">
+            <GraduationCap className="w-3.5 h-3.5 text-blue-700 dark:text-blue-400" />
             <span>Chapter Governance & Student Leadership 2025-26</span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-950 dark:text-white tracking-tight">
             Faculty Mentors & Executive Council
           </h1>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
+          <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
             The official governing committee of the Computer Society of India Student Chapter at Vidyavardhini's College of Engineering and Technology (VCET).
           </p>
 
@@ -128,7 +128,7 @@ export const MembersPage = ({ onOpenApply }) => {
               className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                 viewMode === 'grid'
                   ? 'bg-blue-700 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
+                  : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100'
               }`}
             >
               <LayoutGrid className="w-3.5 h-3.5" />
@@ -139,7 +139,7 @@ export const MembersPage = ({ onOpenApply }) => {
               className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                 viewMode === 'table'
                   ? 'bg-blue-700 text-white shadow-xs'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
+                  : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-800 hover:bg-slate-100'
               }`}
             >
               <Table className="w-3.5 h-3.5" />
@@ -151,16 +151,16 @@ export const MembersPage = ({ onOpenApply }) => {
         {/* View Mode 1: OFFICIAL TABLE (Matches Image 3) */}
         {viewMode === 'table' && (
           <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
-            <div className="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex justify-between items-center pb-4 border-b border-slate-200 dark:border-slate-800">
               <div>
-                <h3 className="font-heading text-2xl font-bold text-blue-900 dark:text-blue-400">
+                <h3 className="font-heading text-2xl font-bold text-[#0f2862] dark:text-blue-400">
                   CSI Committee (2025-26) :
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400">
                   As certified on the institutional register of VCET Vasai.
                 </p>
               </div>
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
                 Official Roster
               </span>
             </div>
@@ -169,13 +169,13 @@ export const MembersPage = ({ onOpenApply }) => {
               <table className="w-full text-left border-collapse text-xs sm:text-sm">
                 <thead>
                   <tr className="bg-[#0f2862] text-white">
-                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4 border-r border-blue-900">
+                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4 border-r border-blue-900 text-amber-300">
                       Position
                     </th>
-                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
+                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900 text-white">
                       Student Leader
                     </th>
-                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4">
+                    <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4 text-amber-300">
                       Department
                     </th>
                   </tr>
@@ -187,29 +187,29 @@ export const MembersPage = ({ onOpenApply }) => {
                       className={
                         idx % 2 === 0
                           ? 'bg-white dark:bg-slate-900'
-                          : 'bg-slate-50/70 dark:bg-slate-800/50'
+                          : 'bg-slate-50 dark:bg-slate-800/50'
                       }
                     >
-                      <td className="py-3.5 px-4 sm:px-6 font-bold text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800 align-middle">
+                      <td className="py-3.5 px-4 sm:px-6 font-extrabold text-slate-950 dark:text-white border-r border-slate-200 dark:border-slate-800 align-middle">
                         {row.position}
                       </td>
-                      <td className="py-3.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-2">
+                      <td className="py-3.5 px-4 sm:px-6 text-slate-900 dark:text-slate-100 border-r border-slate-200 dark:border-slate-800 space-y-2">
                         {row.members.map((m, i) => (
                           <div key={i} className="flex items-center space-x-3 py-0.5">
                             <img
                               src={m.image}
                               alt={m.name}
-                              className="w-9 h-9 rounded-full object-cover border-2 border-blue-500/40 shadow-2xs shrink-0"
+                              className="w-9 h-9 rounded-full object-cover border-2 border-blue-600/40 shadow-2xs shrink-0"
                             />
                             <div>
-                              <div className="font-semibold text-slate-900 dark:text-white">
+                              <div className="font-bold text-slate-950 dark:text-white">
                                 {m.name}
                               </div>
                             </div>
                           </div>
                         ))}
                       </td>
-                      <td className="py-3.5 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 text-xs font-semibold align-middle">
+                      <td className="py-3.5 px-4 sm:px-6 font-mono text-slate-800 dark:text-slate-300 text-xs font-semibold align-middle">
                         {row.dept}
                       </td>
                     </tr>
@@ -232,7 +232,7 @@ export const MembersPage = ({ onOpenApply }) => {
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                     activeCategory === cat
                       ? 'bg-blue-700 text-white shadow-md'
-                      : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
+                      : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-800'
                   }`}
                 >
                   {cat}
@@ -260,7 +260,7 @@ export const MembersPage = ({ onOpenApply }) => {
                 {filteredMembers.map((member) => (
                   <div
                     key={member.id || member._id}
-                    className="card-interactive bg-white/95 dark:bg-slate-900/85 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-xs hover:shadow-xl hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                    className="card-interactive bg-white dark:bg-slate-900/90 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xs hover:shadow-xl hover:border-blue-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                   >
                     <div>
                       {/* Photo Container */}
@@ -288,18 +288,18 @@ export const MembersPage = ({ onOpenApply }) => {
 
                       {/* Details */}
                       <div className="p-5 space-y-1.5">
-                        <h3 className="font-heading font-extrabold text-slate-900 dark:text-white text-base group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+                        <h3 className="font-heading font-extrabold text-slate-950 dark:text-white text-base group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                           {member.name}
                         </h3>
-                        <p className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                        <p className="text-xs font-bold text-blue-700 dark:text-blue-400">
                           {member.role}
                         </p>
-                        <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                        <p className="text-[11px] font-semibold text-slate-700 dark:text-slate-400">
                           Department of {member.department}
                         </p>
 
                         {member.bio && (
-                          <p className="text-xs text-slate-600 dark:text-slate-400 pt-2 line-clamp-3 leading-relaxed">
+                          <p className="text-xs text-slate-700 dark:text-slate-300 pt-2 line-clamp-3 leading-relaxed">
                             {member.bio}
                           </p>
                         )}
@@ -307,24 +307,24 @@ export const MembersPage = ({ onOpenApply }) => {
                     </div>
 
                     {/* Contact Channels */}
-                    <div className="px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-slate-400 text-xs">
+                    <div className="px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-slate-500 dark:text-slate-400 text-xs">
                       {member.email ? (
                         <a
                           href={`mailto:${member.email}`}
-                          className="flex items-center space-x-1.5 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 truncate text-[11px]"
+                          className="flex items-center space-x-1.5 text-slate-800 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 truncate text-[11px] font-medium"
                           title={member.email}
                         >
-                          <Mail className="w-3.5 h-3.5 shrink-0 text-blue-600 dark:text-blue-400" />
+                          <Mail className="w-3.5 h-3.5 shrink-0 text-blue-700 dark:text-blue-400" />
                           <span className="truncate">{member.email}</span>
                         </a>
                       ) : (
-                        <span>VCET Campus</span>
+                        <span className="font-medium">VCET Campus</span>
                       )}
 
                       {member.phone && (
                         <a
                           href={`tel:${member.phone}`}
-                          className="flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-emerald-600 text-[11px] shrink-0 ml-2"
+                          className="flex items-center space-x-1 text-slate-800 dark:text-slate-300 hover:text-emerald-700 text-[11px] shrink-0 ml-2 font-medium"
                         >
                           <Phone className="w-3.5 h-3.5 text-emerald-600" />
                           <span>{member.phone}</span>
@@ -340,10 +340,10 @@ export const MembersPage = ({ onOpenApply }) => {
 
         {/* Join Council Callout */}
         <div className="mt-12 bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 text-center max-w-3xl mx-auto shadow-sm">
-          <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
+          <h3 className="font-heading text-xl font-bold text-slate-950 dark:text-white">
             Interested in joining the CSI VCET Council?
           </h3>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mt-2 max-w-xl mx-auto">
             Student recruitment applications for junior committee associates and technical leads are currently open.
           </p>
           <button

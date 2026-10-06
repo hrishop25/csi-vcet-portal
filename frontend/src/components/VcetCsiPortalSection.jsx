@@ -130,9 +130,9 @@ export const VcetCsiPortalSection = () => {
     <section className="py-14 bg-white dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800/80 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Institutional Section Banner */}
-        <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white p-7 sm:p-10">
+        <div className="relative rounded-3xl overflow-hidden shadow-lg border border-blue-900/30 bg-gradient-to-r from-[#0f2862] via-[#1e3a8a] to-[#0f2862] text-white p-7 sm:p-10">
           <div className="relative z-10 space-y-2">
-            <div className="text-xs font-bold text-amber-400 uppercase tracking-widest flex items-center space-x-2">
+            <div className="text-xs font-bold text-amber-300 uppercase tracking-widest flex items-center space-x-2">
               <span>Home</span>
               <span>»</span>
               <span>CSI VCET Chapter Portal</span>
@@ -140,7 +140,7 @@ export const VcetCsiPortalSection = () => {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold tracking-tight text-white">
               Computer Society of India
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 font-sans max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-blue-100 font-sans max-w-2xl leading-relaxed">
               Official Departmental Technical Society • Vidyavardhini's College of Engineering and Technology
             </p>
           </div>
@@ -150,13 +150,13 @@ export const VcetCsiPortalSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* Left Navigation Sidebar */}
           <div className="md:col-span-4 lg:col-span-3">
-            <div className="bg-slate-50/90 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-200/90 dark:border-slate-800 p-2 shadow-xs space-y-1">
+            <div className="bg-white dark:bg-slate-900/80 rounded-3xl border border-slate-200 dark:border-slate-800 p-2 shadow-xs space-y-1">
               <button
                 onClick={() => setActiveTab('about')}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-left transition-all duration-200 ${
                   activeTab === 'about'
-                    ? 'bg-blue-600 text-white shadow-md font-bold'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+                    ? 'bg-[#0f2862] dark:bg-blue-600 text-white shadow-md font-bold'
+                    : 'text-slate-800 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <Info className="w-4 h-4 shrink-0" />
@@ -167,8 +167,8 @@ export const VcetCsiPortalSection = () => {
                 onClick={() => setActiveTab('gallery')}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-left transition-all duration-200 ${
                   activeTab === 'gallery'
-                    ? 'bg-blue-600 text-white shadow-md font-bold'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+                    ? 'bg-[#0f2862] dark:bg-blue-600 text-white shadow-md font-bold'
+                    : 'text-slate-800 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <Image className="w-4 h-4 shrink-0" />
@@ -179,8 +179,8 @@ export const VcetCsiPortalSection = () => {
                 onClick={() => setActiveTab('faculty')}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-left transition-all duration-200 ${
                   activeTab === 'faculty'
-                    ? 'bg-blue-600 text-white shadow-md font-bold'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+                    ? 'bg-[#0f2862] dark:bg-blue-600 text-white shadow-md font-bold'
+                    : 'text-slate-800 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <User className="w-4 h-4 shrink-0" />
@@ -191,8 +191,8 @@ export const VcetCsiPortalSection = () => {
                 onClick={() => setActiveTab('students')}
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-2xl text-xs sm:text-sm font-semibold text-left transition-all duration-200 ${
                   activeTab === 'students'
-                    ? 'bg-blue-600 text-white shadow-md font-bold'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800'
+                    ? 'bg-[#0f2862] dark:bg-blue-600 text-white shadow-md font-bold'
+                    : 'text-slate-800 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
               >
                 <Users className="w-4 h-4 shrink-0" />
@@ -202,7 +202,7 @@ export const VcetCsiPortalSection = () => {
           </div>
 
           {/* Right Main Content Area with Layered Surface */}
-          <div className="md:col-span-8 lg:col-span-9 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl border border-slate-200/90 dark:border-slate-800 p-7 sm:p-9 shadow-sm">
+          <div className="md:col-span-8 lg:col-span-9 bg-white dark:bg-slate-900/80 rounded-3xl border border-slate-200 dark:border-slate-800 p-7 sm:p-9 shadow-sm">
             {/* TAB 1: FACULTY (Matches Image 2) */}
             {activeTab === 'faculty' && (
               <div className="space-y-6">
@@ -210,7 +210,7 @@ export const VcetCsiPortalSection = () => {
                   <h3 className="font-heading text-xl sm:text-2xl font-bold text-slate-950 dark:text-white tracking-tight">
                     Faculty Coordinators
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 mt-1 font-sans">
                     Distinguished faculty mentors guiding CSI VCET chapter initiatives.
                   </p>
                 </div>
@@ -219,11 +219,11 @@ export const VcetCsiPortalSection = () => {
                   {facultyList.map((fac, idx) => (
                     <div
                       key={idx}
-                      className="card-interactive bg-slate-50/80 dark:bg-slate-800/60 rounded-3xl border border-slate-200/90 dark:border-slate-700/80 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+                      className="card-interactive bg-slate-50 dark:bg-slate-800/60 rounded-3xl border border-slate-200 dark:border-slate-700/80 overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
                     >
                       <div className="p-5 flex flex-col items-center text-center">
                         {/* Portrait Photo */}
-                        <div className="w-28 h-32 rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700 mb-3.5 shadow-md relative group border border-slate-200 dark:border-slate-600">
+                        <div className="w-28 h-32 rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-700 mb-3.5 shadow-sm relative group border border-slate-200 dark:border-slate-600">
                           <img
                             src={fac.image}
                             alt={fac.name}
@@ -232,29 +232,29 @@ export const VcetCsiPortalSection = () => {
                         </div>
 
                         {/* Faculty Name */}
-                        <h4 className="font-heading font-extrabold text-base text-slate-900 dark:text-amber-400 tracking-tight">
+                        <h4 className="font-heading font-extrabold text-base text-slate-950 dark:text-amber-400 tracking-tight">
                           {fac.name}
                         </h4>
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-700/50 mt-1">
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 dark:bg-blue-900/40 text-blue-900 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50 mt-1">
                           {fac.dept}
                         </span>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 font-sans">
+                        <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 font-medium font-sans">
                           {fac.role}
                         </p>
                       </div>
 
                       {/* Contact Details */}
-                      <div className="p-4 bg-white/90 dark:bg-slate-900/70 border-t border-slate-200/80 dark:border-slate-700/80 space-y-2 text-xs">
+                      <div className="p-4 bg-white dark:bg-slate-900/70 border-t border-slate-200 dark:border-slate-700/80 space-y-2 text-xs">
                         <a
                           href={`mailto:${fac.email}`}
-                          className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate"
+                          className="flex items-center space-x-2 text-slate-800 dark:text-slate-300 hover:text-blue-700 dark:hover:text-blue-400 transition-colors truncate font-medium"
                         >
-                          <Mail className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+                          <Mail className="w-3.5 h-3.5 text-blue-700 dark:text-blue-400 shrink-0" />
                           <span className="truncate">{fac.email}</span>
                         </a>
                         <a
                           href={`tel:${fac.phone}`}
-                          className="flex items-center space-x-2 text-slate-600 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                          className="flex items-center space-x-2 text-slate-800 dark:text-slate-300 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors font-medium"
                         >
                           <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                           <span>{fac.phone}</span>
@@ -270,10 +270,10 @@ export const VcetCsiPortalSection = () => {
             {activeTab === 'students' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-blue-900 dark:text-blue-400">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-[#0f2862] dark:text-blue-400">
                     CSI Committee (2025-26) :
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400 mt-0.5 font-sans">
                     Official executive council roster for the current academic tenure.
                   </p>
                 </div>
@@ -283,13 +283,13 @@ export const VcetCsiPortalSection = () => {
                   <table className="w-full text-left border-collapse text-xs sm:text-sm">
                     <thead>
                       <tr className="bg-[#0f2862] text-white">
-                        <th className="py-3 px-4 sm:px-6 font-bold w-1/4 border-r border-blue-900">
+                        <th className="py-3 px-4 sm:px-6 font-bold w-1/4 border-r border-blue-900 text-amber-300">
                           Position
                         </th>
-                        <th className="py-3 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
+                        <th className="py-3 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900 text-white">
                           Student Leader
                         </th>
-                        <th className="py-3 px-4 sm:px-6 font-bold w-1/4">
+                        <th className="py-3 px-4 sm:px-6 font-bold w-1/4 text-amber-300">
                           Department
                         </th>
                       </tr>
@@ -301,25 +301,25 @@ export const VcetCsiPortalSection = () => {
                           className={
                             rIdx % 2 === 0
                               ? 'bg-white dark:bg-slate-900'
-                              : 'bg-slate-50/70 dark:bg-slate-800/50'
+                              : 'bg-slate-50 dark:bg-slate-800/50'
                           }
                         >
                           {/* Position Column */}
-                          <td className="py-3 px-4 sm:px-6 font-bold text-slate-800 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800 align-middle">
+                          <td className="py-3 px-4 sm:px-6 font-extrabold text-slate-950 dark:text-white border-r border-slate-200 dark:border-slate-800 align-middle">
                             {row.position}
                           </td>
 
                           {/* Name & Photo Column */}
-                          <td className="py-2.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-2">
+                          <td className="py-2.5 px-4 sm:px-6 text-slate-900 dark:text-slate-100 border-r border-slate-200 dark:border-slate-800 space-y-2">
                             {row.members.map((m, mIdx) => (
                               <div key={mIdx} className="flex items-center space-x-3 py-1">
                                 <img
                                   src={m.image}
                                   alt={m.name}
-                                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-500/40 shadow-xs shrink-0"
+                                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-600/40 shadow-xs shrink-0"
                                 />
                                 <div>
-                                  <div className="font-semibold text-slate-900 dark:text-white leading-tight">
+                                  <div className="font-bold text-slate-950 dark:text-white leading-tight">
                                     {m.name}
                                   </div>
                                 </div>
@@ -328,7 +328,7 @@ export const VcetCsiPortalSection = () => {
                           </td>
 
                           {/* Department Column */}
-                          <td className="py-3 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 space-y-1 align-middle">
+                          <td className="py-3 px-4 sm:px-6 font-mono text-slate-800 dark:text-slate-300 space-y-1 align-middle">
                             {row.members.map((m, mIdx) => (
                               <div key={mIdx} className="text-xs font-semibold">
                                 {m.dept}
@@ -343,10 +343,10 @@ export const VcetCsiPortalSection = () => {
 
                 {/* Annual Reports Archive (Matching Image 3) */}
                 <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
-                  <h4 className="font-heading text-lg font-bold text-blue-900 dark:text-blue-400">
+                  <h4 className="font-heading text-lg font-bold text-[#0f2862] dark:text-blue-400">
                     Reports - Events and Committee Details :
                   </h4>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-400">
                     Official annual activity documentation submitted to the University and CSI National Body.
                   </p>
 
@@ -360,10 +360,10 @@ export const VcetCsiPortalSection = () => {
                         <div className="w-10 h-10 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-xs group-hover:scale-105 transition-transform">
                           <FileText className="w-5 h-5 text-slate-900" />
                         </div>
-                        <span className="text-xs font-bold text-slate-800 dark:text-slate-200">
+                        <span className="text-xs font-bold text-slate-950 dark:text-slate-200">
                           {rep.year}
                         </span>
-                        <span className="text-[10px] text-blue-600 dark:text-blue-400 font-semibold group-hover:underline">
+                        <span className="text-[11px] text-blue-700 dark:text-blue-400 font-bold group-hover:underline">
                           View Report
                         </span>
                       </div>
