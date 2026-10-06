@@ -185,24 +185,35 @@ Click on **"Admin Portal"** in the top navigation bar or navigate directly to th
 
 ---
 
-## 🚢 Git & GitHub Automation
+## ⚡ Live Vercel Deployment Guide
 
-### Step 1: Initialize & Verify Local Git Repository
-Run from the root `csi-vcet-portal` folder:
+The repository includes a ready-to-deploy `vercel.json` and serverless API entry point (`api/index.js`), allowing both the React frontend and Express backend to run together on Vercel under a single domain.
+
+### Option A: Deploy via GitHub (1-Click, Recommended)
+1. Push this repository to GitHub:
+   ```bash
+   git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/csi-vcet-portal.git
+   git branch -M main
+   git push -u origin main
+   ```
+2. Navigate to [vercel.com/new](https://vercel.com/new).
+3. Import the `csi-vcet-portal` repository.
+4. *(Optional)* Add Environment Variables in Vercel project settings:
+   - `JWT_SECRET`: `csi_vcet_super_secret_jwt_key_2026_production`
+   - `MONGODB_URI`: `mongodb+srv://...` *(If left unset, the backend will automatically run in autonomous in-memory mode with pre-seeded data).*
+5. Click **Deploy**. Vercel will build and assign your live link: `https://csi-vcet-portal.vercel.app`.
+
+### Option B: Deploy via Vercel CLI
+Run the following in the project root:
 ```bash
-git status
+npx vercel
 ```
-
-### Step 2: Push to GitHub
-1. Create a new repository on [GitHub](https://github.com/new) named `csi-vcet-portal`.
-2. Link your local repo and push to the `main` branch:
-```bash
-git remote add origin https://github.com/<YOUR_GITHUB_USERNAME>/csi-vcet-portal.git
-git branch -M main
-git push -u origin main
-```
-
-*(If you have GitHub CLI installed later, you can also run: `gh repo create csi-vcet-portal --public --source=. --push`)*
+1. Authenticate with your Vercel account when prompted in the browser.
+2. Accept the default configuration (it will automatically detect `vercel.json`).
+3. Deploy to production:
+   ```bash
+   npx vercel --prod
+   ```
 
 ---
 
