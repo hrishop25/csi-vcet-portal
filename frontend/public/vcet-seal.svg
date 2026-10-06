@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect x="5" y="5" width="150" height="150" rx="20" fill="url(#sealGrad)" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="80" cy="80" r="60" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/>
+  <polygon points="80,35 125,60 125,100 80,125 35,100 35,60" fill="none" stroke="#60a5fa" stroke-width="3"/>
+  <text x="80" y="75" font-family="system-ui, sans-serif" font-size="20" font-weight="900" fill="#ffffff" text-anchor="middle">VCET</text>
+  <text x="80" y="94" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#f59e0b" text-anchor="middle" letter-spacing="1.5">VASAI</text>
+  <text x="80" y="108" font-family="system-ui, sans-serif" font-size="7" font-weight="600" fill="#94a3b8" text-anchor="middle">ESTD. 1994</text>
+</svg>

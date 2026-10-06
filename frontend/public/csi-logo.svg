@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="csiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield/Circle -->
+  <circle cx="100" cy="100" r="92" fill="url(#csiGrad)" stroke="#f59e0b" stroke-width="4" />
+  
+  <!-- Outer Technological Cog/Circuit Rings -->
+  <circle cx="100" cy="100" r="76" fill="none" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8 4" opacity="0.8" />
+  <circle cx="100" cy="100" r="66" fill="#0f172a" />
+  
+  <!-- Tech Binary / Circuit Accents -->
+  <path d="M 100 40 L 100 55 M 100 145 L 100 160 M 40 100 L 55 100 M 145 100 L 160 100" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Central Stylized CSI Monogram -->
+  <text x="100" y="98" font-family="'Space Grotesk', system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">CSI</text>
+  <text x="100" y="118" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#f59e0b" text-anchor="middle" letter-spacing="4">VCET</text>
+  
+  <!-- Bottom Ribbon Subtext -->
+  <text x="100" y="134" font-family="system-ui, sans-serif" font-size="8" font-weight="700" fill="#93c5fd" text-anchor="middle" letter-spacing="1.5">STUDENT CHAPTER</text>
+</svg>
