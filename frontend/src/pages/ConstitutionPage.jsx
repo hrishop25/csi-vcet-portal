@@ -57,7 +57,7 @@ export const ConstitutionPage = () => {
                 <span className="font-heading">Name, Jurisdiction & Affiliation</span>
               </h2>
               <p className="leading-relaxed">
-                The name of this organization shall be the <strong>Computer Society of India - Student Chapter at Vidyavardhini's College of Engineering and Technology</strong> (hereinafter referenced as "CSI VCET"). The chapter functions under the patronage of the Department of Computer Engineering and is recognized by the Computer Society of India Mumbai Chapter (Region VII).
+                The name of this organization shall be the <strong>Computer Society of India - Student Chapter at Vidyavardhini's College of Engineering and Technology</strong> (hereinafter referenced as "CSI VCET"). The chapter functions under the patronage of the Department of Computer Engineering, Information Technology, and CSE(DS) and is recognized by the Computer Society of India Mumbai Chapter (Region VII).
               </p>
             </section>
 

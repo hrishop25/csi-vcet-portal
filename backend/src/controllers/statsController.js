@@ -49,15 +49,15 @@ export const getDashboardStats = async (req, res) => {
       'Information Technology': applications.filter(
         (a) => a.department === 'Information Technology'
       ).length,
-      'Artificial Intelligence & Data Science': applications.filter(
-        (a) => a.department === 'Artificial Intelligence & Data Science'
+      'CSE(DS)': applications.filter(
+        (a) => a.department === 'CSE(DS)' || a.department === 'Artificial Intelligence & Data Science'
       ).length,
       'Electronics & Telecommunication': applications.filter(
         (a) => a.department === 'Electronics & Telecommunication'
       ).length,
       'Other': applications.filter(
         (a) =>
-          !['Computer Engineering', 'Information Technology', 'Artificial Intelligence & Data Science', 'Electronics & Telecommunication'].includes(a.department)
+          !['Computer Engineering', 'Information Technology', 'CSE(DS)', 'Artificial Intelligence & Data Science', 'Electronics & Telecommunication'].includes(a.department)
       ).length,
     };
 

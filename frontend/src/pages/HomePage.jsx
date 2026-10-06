@@ -45,7 +45,7 @@ export const HomePage = ({ setActiveView, onOpenApply }) => {
               Join the Executive Roster of CSI VCET
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              Open to undergraduate students across Computer Engineering, IT, AI & Data Science, and allied departments. Step into student leadership, lead national hackathons, and contribute to chapter codebases.
+              Open to undergraduate students across Computer Engineering, IT, CSE(DS), and allied engineering departments. Step into student leadership, lead national hackathons, and contribute to chapter codebases.
             </p>
           </div>
 

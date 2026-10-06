@@ -175,7 +175,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               {/* Row 2: Phone and Roll Number */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     Phone / WhatsApp Number
                   </label>
                   <div className="relative">
@@ -186,13 +186,13 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="+91 98200 XXXXX"
-                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     Roll Number / UID
                   </label>
                   <input
@@ -201,7 +201,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                     value={formData.rollNumber}
                     onChange={handleChange}
                     placeholder="e.g. 24CMP042"
-                    className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
                   />
                 </div>
               </div>
@@ -209,14 +209,14 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               {/* Row 3: Year and Department */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     Academic Year <span className="text-rose-500">*</span>
                   </label>
                   <select
                     name="year"
                     value={formData.year}
                     onChange={handleChange}
-                    className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                    className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
                   >
                     <option value="FE">First Year (FE)</option>
                     <option value="SE">Second Year (SE)</option>
@@ -226,18 +226,18 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     Department / Branch <span className="text-rose-500">*</span>
                   </label>
                   <select
                     name="department"
                     value={formData.department}
                     onChange={handleChange}
-                    className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                    className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
                   >
                     <option value="Computer Engineering">Computer Engineering</option>
                     <option value="Information Technology">Information Technology</option>
-                    <option value="Artificial Intelligence & Data Science">AI & Data Science</option>
+                    <option value="CSE(DS)">CSE(DS)</option>
                     <option value="Electronics & Telecommunication">EXTC</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Civil Engineering">Civil Engineering</option>
@@ -247,14 +247,14 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
 
               {/* Row 4: Preferred Council Domain */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Preferred Committee Domain <span className="text-rose-500">*</span>
                 </label>
                 <select
                   name="domainPreference"
                   value={formData.domainPreference}
                   onChange={handleChange}
-                  className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                  className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
                 >
                   <option value="Technical">Technical & Development (Full-Stack, AI, Cloud)</option>
                   <option value="Web & App">Web & Chapter Portal Infrastructure</option>
@@ -267,7 +267,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
 
               {/* Skills */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Technical or Organizational Skills (comma-separated)
                 </label>
                 <input
@@ -276,13 +276,13 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                   value={formData.skills}
                   onChange={handleChange}
                   placeholder="e.g. React, Node.js, Python, Figma, Public Speaking, Video Editing"
-                  className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 />
               </div>
 
               {/* Statement of Purpose */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Why do you wish to join the CSI VCET Chapter?
                 </label>
                 <textarea
@@ -291,13 +291,13 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                   value={formData.statementOfPurpose}
                   onChange={handleChange}
                   placeholder="Tell us about your motivation, prior project experience, or what you hope to achieve with the chapter..."
-                  className="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 ></textarea>
               </div>
 
               {/* Portfolio / GitHub URL */}
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                   Portfolio / GitHub / LinkedIn Profile URL
                 </label>
                 <input
@@ -306,16 +306,16 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                   value={formData.portfolioUrl}
                   onChange={handleChange}
                   placeholder="https://github.com/username or https://linkedin.com/in/username"
-                  className="w-full px-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500"
                 />
               </div>
 
               {/* Submit Buttons */}
-              <div className="pt-4 border-t border-slate-200 flex justify-end space-x-3">
+              <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
                 <button
                   type="button"
                   onClick={handleResetAndClose}
-                  className="px-4 py-2.5 text-xs font-bold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+                  className="px-4 py-2.5 text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-colors"
                 >
                   Cancel
                 </button>

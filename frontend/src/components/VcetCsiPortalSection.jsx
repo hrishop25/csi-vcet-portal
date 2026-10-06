@@ -4,7 +4,7 @@ import { Info, Image, User, Users, Mail, Phone, FileText, Download, CheckCircle,
 export const VcetCsiPortalSection = () => {
   const [activeTab, setActiveTab] = useState('faculty');
 
-  // Faculty Coordinators with Bollywood & Avengers Star Personas
+  // Faculty Coordinators
   const facultyList = [
     {
       name: 'Dr. Swati Varma',
@@ -12,16 +12,14 @@ export const VcetCsiPortalSection = () => {
       email: 'swati.varma@vcet.edu.in',
       phone: '9869775463',
       image: '/actors/deepika.jpg',
-      actorAvatar: 'Deepika Padukone',
       role: 'Associate Professor & Faculty Coordinator',
     },
     {
       name: 'Ms. Maya Varghese',
-      dept: '(CSE-DS)',
+      dept: '(CSE(DS))',
       email: 'maya.varghese@vcet.edu.in',
       phone: '9699547709',
       image: '/actors/elizabeth_olsen.jpg',
-      actorAvatar: 'Elizabeth Olsen (Scarlet Witch)',
       role: 'Assistant Professor & Faculty Coordinator',
     },
     {
@@ -30,67 +28,66 @@ export const VcetCsiPortalSection = () => {
       email: 'pragati.patil@vcet.edu.in',
       phone: '9769990253',
       image: '/actors/scarlett.jpg',
-      actorAvatar: 'Scarlett Johansson (Black Widow)',
       role: 'Assistant Professor & Faculty Coordinator',
     },
   ];
 
-  // CSI Committee 2025-26 with Bollywood & Avengers Star Personas
+  // CSI Committee 2025-26
   const committeeData = [
     {
       position: 'Chairperson',
-      members: [{ name: 'Siddharth Chakravarty', dept: 'CSE(DS)', image: '/actors/rdj.jpg', actor: 'Robert Downey Jr. (Iron Man)' }],
+      members: [{ name: 'Siddharth Chakravarty', dept: 'CSE(DS)', image: '/actors/rdj.jpg' }],
     },
     {
       position: 'Treasurer',
-      members: [{ name: 'Aditya Bawane', dept: 'IT', image: '/actors/cumberbatch.jpg', actor: 'Benedict Cumberbatch (Dr. Strange)' }],
+      members: [{ name: 'Aditya Bawane', dept: 'IT', image: '/actors/cumberbatch.jpg' }],
     },
     {
       position: 'Secretary',
       members: [
-        { name: 'Pranay Ippakayal', dept: 'IT', image: '/actors/srk.jpg', actor: 'Shah Rukh Khan' },
-        { name: 'Sangini Shetty', dept: 'IT', image: '/actors/alia.jpg', actor: 'Alia Bhatt' },
+        { name: 'Pranay Ippakayal', dept: 'IT', image: '/actors/srk.jpg' },
+        { name: 'Sangini Shetty', dept: 'IT', image: '/actors/alia.jpg' },
       ],
     },
     {
       position: 'Joint Secretary',
       members: [
-        { name: 'Vatsal Makadiya', dept: 'COMPS', image: '/actors/chrisevans.jpg', actor: 'Chris Evans (Captain America)' },
-        { name: 'Sumit Mali', dept: 'COMPS', image: '/actors/hemsworth.jpg', actor: 'Chris Hemsworth (Thor)' },
+        { name: 'Vatsal Makadiya', dept: 'COMPS', image: '/actors/chrisevans.jpg' },
+        { name: 'Sumit Mali', dept: 'COMPS', image: '/actors/hemsworth.jpg' },
       ],
     },
     {
       position: 'Technical Head',
       members: [
-        { name: 'Wajiha Kulsum', dept: 'COMPS', image: '/actors/zendaya.jpg', actor: 'Zendaya (MJ)' },
-        { name: 'Shubham Singh', dept: 'IT', image: '/actors/tomholland.jpg', actor: 'Tom Holland (Spider-Man)' },
-        { name: 'Parth Vasave', dept: 'CSE(DS)', image: '/actors/markruffalo.jpg', actor: 'Mark Ruffalo (Hulk)' },
+        { name: 'Wajiha Kulsum', dept: 'COMPS', image: '/actors/zendaya.jpg' },
+        { name: 'Shubham Singh', dept: 'IT', image: '/actors/tomholland.jpg' },
+        { name: 'Parth Vasave', dept: 'CSE(DS)', image: '/actors/markruffalo.jpg' },
       ],
     },
     {
       position: 'Organizing Head',
       members: [
-        { name: 'Shreya Kathe', dept: 'IT', image: '/actors/katrina.jpg', actor: 'Katrina Kaif' },
-        { name: 'Kunal Patil', dept: 'IT', image: '/actors/hrithik.jpg', actor: 'Hrithik Roshan' },
-        { name: 'Aditi Gupta', dept: 'IT', image: '/actors/kareena.jpg', actor: 'Kareena Kapoor' },
-        { name: 'Bhumi Kamble', dept: 'IT', image: '/actors/anushka.jpg', actor: 'Anushka Sharma' },
-        { name: 'Aditi Rasal', dept: 'CSE(DS)', image: '/actors/deepika.jpg', actor: 'Deepika Padukone' },
+        { name: 'Shreya Kathe', dept: 'IT', image: '/actors/katrina.jpg' },
+        { name: 'Kunal Patil', dept: 'IT', image: '/actors/hrithik.jpg' },
+        { name: 'Aditi Gupta', dept: 'IT', image: '/actors/kareena.jpg' },
+        { name: 'Bhumi Kamble', dept: 'IT', image: '/actors/anushka.jpg' },
+        { name: 'Aditi Rasal', dept: 'CSE(DS)', image: '/actors/deepika.jpg' },
       ],
     },
     {
       position: 'PR Head',
       members: [
-        { name: 'Meenakshi Kshirsagar', dept: 'IT', image: '/actors/elizabeth_olsen.jpg', actor: 'Elizabeth Olsen' },
-        { name: 'Khushi Machhi', dept: 'IT', image: '/actors/scarlett.jpg', actor: 'Scarlett Johansson' },
-        { name: 'Shardul Brid', dept: 'CSE(DS)', image: '/actors/ranveer.jpg', actor: 'Ranveer Singh' },
+        { name: 'Meenakshi Kshirsagar', dept: 'IT', image: '/actors/elizabeth_olsen.jpg' },
+        { name: 'Khushi Machhi', dept: 'IT', image: '/actors/scarlett.jpg' },
+        { name: 'Shardul Brid', dept: 'CSE(DS)', image: '/actors/ranveer.jpg' },
       ],
     },
     {
       position: 'Admin Head',
       members: [
-        { name: 'Gargi Betawadkar', dept: 'COMPS', image: '/actors/alia.jpg', actor: 'Alia Bhatt' },
-        { name: 'Shreya Dadhekar', dept: 'CSE(DS)', image: '/actors/zendaya.jpg', actor: 'Zendaya' },
-        { name: 'Saivamehi Jilla', dept: 'COMPS', image: '/actors/katrina.jpg', actor: 'Katrina Kaif' },
+        { name: 'Gargi Betawadkar', dept: 'COMPS', image: '/actors/alia.jpg' },
+        { name: 'Shreya Dadhekar', dept: 'CSE(DS)', image: '/actors/zendaya.jpg' },
+        { name: 'Saivamehi Jilla', dept: 'COMPS', image: '/actors/katrina.jpg' },
       ],
     },
   ];
@@ -244,9 +241,6 @@ export const VcetCsiPortalSection = () => {
                         <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
                           {fac.role}
                         </p>
-                        <span className="inline-flex items-center px-2 py-0.5 mt-2 text-[10px] font-bold rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                          ⭐ {fac.actorAvatar}
-                        </span>
                       </div>
 
                       {/* Contact Info (Matching Image 2 email & phone) */}
@@ -280,11 +274,11 @@ export const VcetCsiPortalSection = () => {
                     CSI Committee (2025-26) :
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Official executive council roster featuring Bollywood & Avengers avatar portraits.
+                    Official executive council roster for the current academic tenure.
                   </p>
                 </div>
 
-                {/* Structured Institutional Table (Matching Image 3 Navy Header Table with Star Photos) */}
+                {/* Structured Institutional Table (Matching Image 3 Navy Header Table) */}
                 <div className="rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-xs">
                   <table className="w-full text-left border-collapse text-xs sm:text-sm">
                     <thead>
@@ -293,7 +287,7 @@ export const VcetCsiPortalSection = () => {
                           Position
                         </th>
                         <th className="py-3 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
-                          Student Leader & Star Avatar
+                          Student Leader
                         </th>
                         <th className="py-3 px-4 sm:px-6 font-bold w-1/4">
                           Department
@@ -315,21 +309,18 @@ export const VcetCsiPortalSection = () => {
                             {row.position}
                           </td>
 
-                          {/* Name & Star Actor Photo Column */}
+                          {/* Name & Photo Column */}
                           <td className="py-2.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-2">
                             {row.members.map((m, mIdx) => (
                               <div key={mIdx} className="flex items-center space-x-3 py-1">
                                 <img
                                   src={m.image}
-                                  alt={m.actor}
+                                  alt={m.name}
                                   className="w-10 h-10 rounded-full object-cover border-2 border-blue-500/40 shadow-xs shrink-0"
                                 />
                                 <div>
                                   <div className="font-semibold text-slate-900 dark:text-white leading-tight">
                                     {m.name}
-                                  </div>
-                                  <div className="text-[11px] text-blue-700 dark:text-blue-400 font-medium">
-                                    {m.actor}
                                   </div>
                                 </div>
                               </div>
@@ -399,17 +390,21 @@ export const VcetCsiPortalSection = () => {
                     The <strong>Computer Society of India (CSI)</strong> is the first and largest body of computer professionals in India. The Student Chapter at <strong>Vidyavardhini's College of Engineering and Technology (VCET)</strong> was instituted in 2008 to cultivate technical intellect, foster research aptitude, and empower aspiring engineers with practical software engineering skills.
                   </p>
                   <p>
-                    Functioning under the patronage of the Department of Computer Engineering, Information Technology, and CSE-Data Science, the chapter conducts state-level technical symposia, national 36-hour hackathons, coding sprints, and industry guest lectures.
+                    Functioning under the collective mentorship of the Department of <strong>Computer Engineering</strong>, <strong>Information Technology</strong>, and <strong>CSE(DS)</strong> (Computer Science & Engineering - Data Science), the chapter conducts state-level technical symposia, national 36-hour hackathons, coding sprints, and industry guest lectures.
                   </p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
                     <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-                      <span className="font-bold text-slate-900 dark:text-white text-xs block">College Affiliation</span>
-                      <span className="text-xs text-slate-500 dark:text-slate-400">Autonomous Institute Affiliated to University of Mumbai (NAAC 'A' Accredited).</span>
+                      <span className="font-bold text-slate-900 dark:text-white text-xs block">CSE(DS) Department</span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400">Pioneering Big Data, Machine Learning, and Cloud Systems innovations.</span>
                     </div>
                     <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-                      <span className="font-bold text-slate-900 dark:text-white text-xs block">Chapter Jurisdiction</span>
-                      <span className="text-xs text-slate-500 dark:text-slate-400">CSI Region VII (Mumbai Chapter), recognized among top active student chapters.</span>
+                      <span className="font-bold text-slate-900 dark:text-white text-xs block">COMPS & IT Depts</span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400">Foundational engineering in Full-Stack, Cyber Security & Systems.</span>
+                    </div>
+                    <div className="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <span className="font-bold text-slate-900 dark:text-white text-xs block">CSI Region VII & VCET</span>
+                      <span className="text-[11px] text-slate-500 dark:text-slate-400">Autonomous Institute (NAAC 'A' Accredited), premier Mumbai student chapter.</span>
                     </div>
                   </div>
                 </div>

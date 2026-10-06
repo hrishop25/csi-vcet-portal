@@ -20,7 +20,7 @@ export const WhoWeAre = () => {
           <span className="font-semibold text-slate-950 dark:text-white">
             Vidyavardhini's College of Engineering and Technology
           </span>{' '}
-          serves as the official premier technical society for the university cohort. Formed under the mentorship of the Department of Computer Engineering and Information Technology, the chapter is founded upon the principles of practical craft, technical leadership, and collaborative integrity.
+          serves as the official premier technical society for the university cohort. Formed under the mentorship of the Department of Computer Engineering, Information Technology, and CSE(DS), the chapter is founded upon the principles of practical craft, technical leadership, and collaborative integrity.
         </p>
 
         <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
@@ -65,7 +65,7 @@ export const WhoWeAre = () => {
               <span>Faculty Mentorship</span>
             </div>
             <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
-              Advised by senior professors across COMPS, IT, and CSE-Data Science departments.
+              Advised by senior professors across Computer Engineering, IT, and CSE(DS) departments.
             </p>
           </div>
         </div>

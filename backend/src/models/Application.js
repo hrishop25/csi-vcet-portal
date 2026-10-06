@@ -35,6 +35,7 @@ const applicationSchema = new mongoose.Schema(
       enum: [
         'Computer Engineering',
         'Information Technology',
+        'CSE(DS)',
         'Artificial Intelligence & Data Science',
         'Electronics & Telecommunication',
         'Mechanical Engineering',

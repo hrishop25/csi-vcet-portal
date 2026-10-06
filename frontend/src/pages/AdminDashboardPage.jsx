@@ -339,9 +339,10 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterDept}
                 onChange={(e) => setFilterDept(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
               >
                 <option value="All">All Departments</option>
+                <option value="CSE(DS)">CSE(DS)</option>
                 <option value="Computer Engineering">Computer Engineering</option>
                 <option value="Information Technology">Information Technology</option>
                 <option value="Artificial Intelligence & Data Science">AI & Data Science</option>
@@ -356,7 +357,7 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterStatus}
                 onChange={(e) => setFilterStatus(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
               >
                 <option value="All">All Statuses</option>
                 <option value="Pending">Pending</option>
@@ -367,7 +368,7 @@ export const AdminDashboardPage = () => {
             </div>
           </div>
 
-          <div className="flex justify-between items-center text-xs text-slate-500 pt-1 border-t border-slate-100">
+          <div className="flex justify-between items-center text-xs text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-100 dark:border-slate-800">
             <span>
               Showing <strong>{filteredApps.length}</strong> of{' '}
               <strong>{applications.length}</strong> recruitment applications
@@ -541,11 +542,11 @@ export const AdminDashboardPage = () => {
         {stats && (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Department Breakdown Bar Meters */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-xs">
-              <h3 className="font-extrabold text-slate-900 text-base mb-1">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-xs">
+              <h3 className="font-extrabold text-slate-900 dark:text-white text-base mb-1">
                 Applications by Department
               </h3>
-              <p className="text-xs text-slate-500 mb-6">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
                 Candidate pool distribution across engineering departments at VCET
               </p>
 
@@ -557,12 +558,12 @@ export const AdminDashboardPage = () => {
                   return (
                     <div key={dept} className="space-y-1.5">
                       <div className="flex justify-between text-xs font-semibold">
-                        <span className="text-slate-700 truncate pr-2">{dept}</span>
-                        <span className="text-slate-900 font-mono">
+                        <span className="text-slate-700 dark:text-slate-300 truncate pr-2">{dept}</span>
+                        <span className="text-slate-900 dark:text-white font-mono">
                           {count} ({pct}%)
                         </span>
                       </div>
-                      <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                      <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
                         <div
                           className="bg-blue-600 h-2.5 rounded-full transition-all duration-500"
                           style={{ width: `${pct}%` }}
@@ -575,12 +576,12 @@ export const AdminDashboardPage = () => {
             </div>
 
             {/* Academic Year Distribution & Council Health */}
-            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200 shadow-xs flex flex-col justify-between">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col justify-between">
               <div>
-                <h3 className="font-extrabold text-slate-900 text-base mb-1">
+                <h3 className="font-extrabold text-slate-900 dark:text-white text-base mb-1">
                   Distribution by Academic Year
                 </h3>
-                <p className="text-xs text-slate-500 mb-6">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mb-6">
                   Participation across Undergrad Classes (FE, SE, TE, BE)
                 </p>
 
@@ -588,13 +589,13 @@ export const AdminDashboardPage = () => {
                   {Object.entries(stats.byYear || {}).map(([yr, count]) => (
                     <div
                       key={yr}
-                      className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center"
+                      className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-center"
                     >
-                      <span className="text-[10px] font-bold text-slate-500 uppercase">
+                      <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase">
                         {yr} Year
                       </span>
-                      <p className="text-xl font-black text-slate-900 mt-0.5">{count}</p>
-                      <span className="text-[10px] text-slate-400">Applicants</span>
+                      <p className="text-xl font-black text-slate-900 dark:text-white mt-0.5">{count}</p>
+                      <span className="text-[10px] text-slate-400 dark:text-slate-500">Applicants</span>
                     </div>
                   ))}
                 </div>
@@ -618,7 +619,7 @@ export const AdminDashboardPage = () => {
         {/* Applicant Detail / Notes Review Modal */}
         {selectedApp && (
           <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
-            <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
+            <div className="relative bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform transition-all">
               {/* Header */}
               <div className="bg-slate-900 text-white p-6 flex justify-between items-start">
                 <div>
@@ -643,20 +644,20 @@ export const AdminDashboardPage = () => {
               <div className="p-6 space-y-5 max-h-[70vh] overflow-y-auto text-xs sm:text-sm">
                 {/* Domain & Skills */}
                 <div>
-                  <span className="font-bold text-slate-700 block mb-1">Target Committee Domain:</span>
-                  <span className="inline-block px-3 py-1 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                  <span className="font-bold text-slate-700 dark:text-slate-300 block mb-1">Target Committee Domain:</span>
+                  <span className="inline-block px-3 py-1 rounded-lg text-xs font-bold bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-700/50">
                     {selectedApp.domainPreference}
                   </span>
                 </div>
 
                 {selectedApp.skills && selectedApp.skills.length > 0 && (
                   <div>
-                    <span className="font-bold text-slate-700 block mb-1.5">Applicant Skills:</span>
+                    <span className="font-bold text-slate-700 dark:text-slate-300 block mb-1.5">Applicant Skills:</span>
                     <div className="flex flex-wrap gap-1.5">
                       {selectedApp.skills.map((s, idx) => (
                         <span
                           key={idx}
-                          className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-800 border border-slate-200"
+                          className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700"
                         >
                           {s}
                         </span>
@@ -667,8 +668,8 @@ export const AdminDashboardPage = () => {
 
                 {/* Statement of Purpose */}
                 <div>
-                  <span className="font-bold text-slate-700 block mb-1">Statement of Purpose / Why Join:</span>
-                  <p className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 leading-relaxed text-xs">
+                  <span className="font-bold text-slate-700 dark:text-slate-300 block mb-1">Statement of Purpose / Why Join:</span>
+                  <p className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 leading-relaxed text-xs">
                     {selectedApp.statementOfPurpose || 'No statement provided by candidate.'}
                   </p>
                 </div>
@@ -676,12 +677,12 @@ export const AdminDashboardPage = () => {
                 {/* Portfolio URL */}
                 {selectedApp.portfolioUrl && (
                   <div>
-                    <span className="font-bold text-slate-700 block mb-1">Portfolio / Profile Link:</span>
+                    <span className="font-bold text-slate-700 dark:text-slate-300 block mb-1">Portfolio / Profile Link:</span>
                     <a
                       href={selectedApp.portfolioUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center space-x-1.5 text-blue-600 hover:text-blue-800 underline font-semibold text-xs"
+                      className="inline-flex items-center space-x-1.5 text-blue-600 dark:text-blue-400 hover:underline font-semibold text-xs"
                     >
                       <span>{selectedApp.portfolioUrl}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
@@ -690,9 +691,9 @@ export const AdminDashboardPage = () => {
                 )}
 
                 {/* Admin Interview Slot & Notes Inputs */}
-                <div className="pt-3 border-t border-slate-200 space-y-3">
+                <div className="pt-3 border-t border-slate-200 dark:border-slate-800 space-y-3">
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                       Scheduled Interview Slot
                     </label>
                     <input
@@ -700,12 +701,12 @@ export const AdminDashboardPage = () => {
                       value={slotInput}
                       onChange={(e) => setSlotInput(e.target.value)}
                       placeholder="e.g. 2026-10-15 03:00 PM, Lab 402"
-                      className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:outline-none"
+                      className="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                       Internal Committee Notes / Interview Feedback
                     </label>
                     <textarea
@@ -713,17 +714,17 @@ export const AdminDashboardPage = () => {
                       value={notesInput}
                       onChange={(e) => setNotesInput(e.target.value)}
                       placeholder="Add interviewer remarks, live coding score, or notes..."
-                      className="w-full px-3 py-2 text-xs bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:outline-none"
+                      className="w-full px-3 py-2 text-xs bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Footer */}
-              <div className="p-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-3">
+              <div className="p-4 bg-slate-50 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-800 flex justify-end space-x-3">
                 <button
                   onClick={() => setSelectedApp(null)}
-                  className="px-4 py-2 text-xs font-bold text-slate-600 hover:text-slate-900"
+                  className="px-4 py-2 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
                 >
                   Close
                 </button>

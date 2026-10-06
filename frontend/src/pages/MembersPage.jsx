@@ -15,65 +15,65 @@ const categories = [
 const committeeTableRows = [
   {
     position: 'Chairperson',
-    members: [{ name: 'Siddharth Chakravarty', actor: 'Robert Downey Jr. (Iron Man)', image: '/actors/rdj.jpg' }],
+    members: [{ name: 'Siddharth Chakravarty', image: '/actors/rdj.jpg' }],
     dept: 'CSE(DS)',
   },
   {
     position: 'Treasurer',
-    members: [{ name: 'Aditya Bawane', actor: 'Benedict Cumberbatch (Doctor Strange)', image: '/actors/cumberbatch.jpg' }],
+    members: [{ name: 'Aditya Bawane', image: '/actors/cumberbatch.jpg' }],
     dept: 'IT',
   },
   {
     position: 'Secretary',
     members: [
-      { name: 'Pranay Ippakayal', actor: 'Shah Rukh Khan', image: '/actors/srk.jpg' },
-      { name: 'Sangini Shetty', actor: 'Alia Bhatt', image: '/actors/alia.jpg' },
+      { name: 'Pranay Ippakayal', image: '/actors/srk.jpg' },
+      { name: 'Sangini Shetty', image: '/actors/alia.jpg' },
     ],
     dept: 'IT',
   },
   {
     position: 'Joint Secretary',
     members: [
-      { name: 'Vatsal Makadiya', actor: 'Chris Evans (Captain America)', image: '/actors/chrisevans.jpg' },
-      { name: 'Sumit Mali', actor: 'Chris Hemsworth (Thor)', image: '/actors/hemsworth.jpg' },
+      { name: 'Vatsal Makadiya', image: '/actors/chrisevans.jpg' },
+      { name: 'Sumit Mali', image: '/actors/hemsworth.jpg' },
     ],
     dept: 'COMPS',
   },
   {
     position: 'Technical Head',
     members: [
-      { name: 'Wajiha Kulsum', actor: 'Zendaya (MJ)', image: '/actors/zendaya.jpg' },
-      { name: 'Shubham Singh', actor: 'Tom Holland (Spider-Man)', image: '/actors/tomholland.jpg' },
-      { name: 'Parth Vasave', actor: 'Mark Ruffalo (Hulk)', image: '/actors/markruffalo.jpg' },
+      { name: 'Wajiha Kulsum', image: '/actors/zendaya.jpg' },
+      { name: 'Shubham Singh', image: '/actors/tomholland.jpg' },
+      { name: 'Parth Vasave', image: '/actors/markruffalo.jpg' },
     ],
     dept: 'COMPS / IT / CSE(DS)',
   },
   {
     position: 'Organizing Head',
     members: [
-      { name: 'Shreya Kathe', actor: 'Katrina Kaif', image: '/actors/katrina.jpg' },
-      { name: 'Kunal Patil', actor: 'Hrithik Roshan', image: '/actors/hrithik.jpg' },
-      { name: 'Aditi Gupta', actor: 'Kareena Kapoor', image: '/actors/kareena.jpg' },
-      { name: 'Bhumi Kamble', actor: 'Anushka Sharma', image: '/actors/anushka.jpg' },
-      { name: 'Aditi Rasal', actor: 'Deepika Padukone', image: '/actors/deepika.jpg' },
+      { name: 'Shreya Kathe', image: '/actors/katrina.jpg' },
+      { name: 'Kunal Patil', image: '/actors/hrithik.jpg' },
+      { name: 'Aditi Gupta', image: '/actors/kareena.jpg' },
+      { name: 'Bhumi Kamble', image: '/actors/anushka.jpg' },
+      { name: 'Aditi Rasal', image: '/actors/deepika.jpg' },
     ],
     dept: 'IT & CSE(DS)',
   },
   {
     position: 'PR Head',
     members: [
-      { name: 'Meenakshi Kshirsagar', actor: 'Elizabeth Olsen', image: '/actors/elizabeth_olsen.jpg' },
-      { name: 'Khushi Machhi', actor: 'Scarlett Johansson', image: '/actors/scarlett.jpg' },
-      { name: 'Shardul Brid', actor: 'Ranveer Singh', image: '/actors/ranveer.jpg' },
+      { name: 'Meenakshi Kshirsagar', image: '/actors/elizabeth_olsen.jpg' },
+      { name: 'Khushi Machhi', image: '/actors/scarlett.jpg' },
+      { name: 'Shardul Brid', image: '/actors/ranveer.jpg' },
     ],
     dept: 'IT & CSE(DS)',
   },
   {
     position: 'Admin Head',
     members: [
-      { name: 'Gargi Betawadkar', actor: 'Alia Bhatt', image: '/actors/alia.jpg' },
-      { name: 'Shreya Dadhekar', actor: 'Zendaya', image: '/actors/zendaya.jpg' },
-      { name: 'Saivamehi Jilla', actor: 'Katrina Kaif', image: '/actors/katrina.jpg' },
+      { name: 'Gargi Betawadkar', image: '/actors/alia.jpg' },
+      { name: 'Shreya Dadhekar', image: '/actors/zendaya.jpg' },
+      { name: 'Saivamehi Jilla', image: '/actors/katrina.jpg' },
     ],
     dept: 'COMPS & CSE(DS)',
   },
@@ -173,7 +173,7 @@ export const MembersPage = ({ onOpenApply }) => {
                       Position
                     </th>
                     <th className="py-3.5 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
-                      Leader & Star Avatar
+                      Student Leader
                     </th>
                     <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4">
                       Department
@@ -198,15 +198,12 @@ export const MembersPage = ({ onOpenApply }) => {
                           <div key={i} className="flex items-center space-x-3 py-0.5">
                             <img
                               src={m.image}
-                              alt={m.actor}
+                              alt={m.name}
                               className="w-9 h-9 rounded-full object-cover border-2 border-blue-500/40 shadow-2xs shrink-0"
                             />
                             <div>
                               <div className="font-semibold text-slate-900 dark:text-white">
                                 {m.name}
-                              </div>
-                              <div className="text-[11px] text-blue-700 dark:text-blue-400 font-medium">
-                                {m.actor}
                               </div>
                             </div>
                           </div>
@@ -270,13 +267,6 @@ export const MembersPage = ({ onOpenApply }) => {
                           <div className="absolute top-3 right-3">
                             <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950">
                               {member.department}
-                            </span>
-                          </div>
-                        )}
-                        {member.starAvatar && (
-                          <div className="absolute bottom-2 left-2 right-2">
-                            <span className="block px-2 py-1 rounded-lg text-[10px] font-bold bg-slate-950/85 text-amber-300 border border-amber-400/30 backdrop-blur-md shadow-xs truncate">
-                              ⭐ {member.starAvatar}
                             </span>
                           </div>
                         )}
