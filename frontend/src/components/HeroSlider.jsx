@@ -84,12 +84,12 @@ export const HeroSlider = () => {
               <div className="absolute inset-0 bg-[#0f172a]/40 mix-blend-multiply pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30 pointer-events-none" />
 
-              {/* Bottom-Right Overlay Text (Exact layout & typography matching reference image) */}
+              {/* Bottom-Right Overlay Text (Modern high-impact typography) */}
               <div className="absolute bottom-10 right-6 sm:bottom-12 sm:right-12 z-20 text-right max-w-lg pointer-events-none">
-                <p className="font-collegiate-serif text-lg sm:text-2xl md:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight">
+                <p className="font-heading text-lg sm:text-2xl md:text-3xl font-extrabold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight tracking-tight">
                   {slide.collegeLine}
                 </p>
-                <p className="font-collegiate-serif text-base sm:text-xl md:text-2xl font-semibold text-blue-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mt-0.5">
+                <p className="font-heading text-base sm:text-xl md:text-2xl font-bold text-blue-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mt-0.5 tracking-tight">
                   {slide.societyLine}
                 </p>
                 <p className="text-xs text-slate-300 font-sans tracking-wide mt-1 drop-shadow hidden sm:block">

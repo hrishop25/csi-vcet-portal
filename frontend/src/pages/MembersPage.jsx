@@ -11,16 +11,72 @@ const categories = [
   'Creatives & PR',
 ];
 
-// Committee Table Dataset matching Image 3
+// Committee Table Dataset matching Image 3 with Bollywood & Avengers Star Avatars
 const committeeTableRows = [
-  { position: 'Chairperson', names: ['Siddharth Chakravarty'], dept: 'CSE(DS)' },
-  { position: 'Treasurer', names: ['Aditya Bawane'], dept: 'IT' },
-  { position: 'Secretary', names: ['Pranay Ippakayal', 'Sangini Shetty'], dept: 'IT' },
-  { position: 'Joint Secretary', names: ['Vatsal Makadiya', 'Sumit Mali'], dept: 'COMPS' },
-  { position: 'Technical Head', names: ['Wajiha Kulsum (COMPS)', 'Shubham Singh (IT)', 'Parth Vasave (CSE(DS))'], dept: 'COMPS / IT / CSE(DS)' },
-  { position: 'Organizing Head', names: ['Shreya Kathe (IT)', 'Kunal Patil (IT)', 'Aditi Gupta (IT)', 'Bhumi Kamble (IT)', 'Aditi Rasal (CSE(DS))'], dept: 'IT & CSE(DS)' },
-  { position: 'PR Head', names: ['Meenakshi Kshirsagar (IT)', 'Khushi Machhi (IT)', 'Shardul Brid (CSE(DS))'], dept: 'IT & CSE(DS)' },
-  { position: 'Admin Head', names: ['Gargi Betawadkar (COMPS)', 'Shreya Dadhekar (CSE(DS))', 'Saivamehi Jilla (COMPS)'], dept: 'COMPS & CSE(DS)' },
+  {
+    position: 'Chairperson',
+    members: [{ name: 'Siddharth Chakravarty', actor: 'Robert Downey Jr. (Iron Man)', image: '/actors/rdj.jpg' }],
+    dept: 'CSE(DS)',
+  },
+  {
+    position: 'Treasurer',
+    members: [{ name: 'Aditya Bawane', actor: 'Benedict Cumberbatch (Doctor Strange)', image: '/actors/cumberbatch.jpg' }],
+    dept: 'IT',
+  },
+  {
+    position: 'Secretary',
+    members: [
+      { name: 'Pranay Ippakayal', actor: 'Shah Rukh Khan', image: '/actors/srk.jpg' },
+      { name: 'Sangini Shetty', actor: 'Alia Bhatt', image: '/actors/alia.jpg' },
+    ],
+    dept: 'IT',
+  },
+  {
+    position: 'Joint Secretary',
+    members: [
+      { name: 'Vatsal Makadiya', actor: 'Chris Evans (Captain America)', image: '/actors/chrisevans.jpg' },
+      { name: 'Sumit Mali', actor: 'Chris Hemsworth (Thor)', image: '/actors/hemsworth.jpg' },
+    ],
+    dept: 'COMPS',
+  },
+  {
+    position: 'Technical Head',
+    members: [
+      { name: 'Wajiha Kulsum', actor: 'Zendaya (MJ)', image: '/actors/zendaya.jpg' },
+      { name: 'Shubham Singh', actor: 'Tom Holland (Spider-Man)', image: '/actors/tomholland.jpg' },
+      { name: 'Parth Vasave', actor: 'Mark Ruffalo (Hulk)', image: '/actors/markruffalo.jpg' },
+    ],
+    dept: 'COMPS / IT / CSE(DS)',
+  },
+  {
+    position: 'Organizing Head',
+    members: [
+      { name: 'Shreya Kathe', actor: 'Katrina Kaif', image: '/actors/katrina.jpg' },
+      { name: 'Kunal Patil', actor: 'Hrithik Roshan', image: '/actors/hrithik.jpg' },
+      { name: 'Aditi Gupta', actor: 'Kareena Kapoor', image: '/actors/kareena.jpg' },
+      { name: 'Bhumi Kamble', actor: 'Anushka Sharma', image: '/actors/anushka.jpg' },
+      { name: 'Aditi Rasal', actor: 'Deepika Padukone', image: '/actors/deepika.jpg' },
+    ],
+    dept: 'IT & CSE(DS)',
+  },
+  {
+    position: 'PR Head',
+    members: [
+      { name: 'Meenakshi Kshirsagar', actor: 'Elizabeth Olsen', image: '/actors/elizabeth_olsen.jpg' },
+      { name: 'Khushi Machhi', actor: 'Scarlett Johansson', image: '/actors/scarlett.jpg' },
+      { name: 'Shardul Brid', actor: 'Ranveer Singh', image: '/actors/ranveer.jpg' },
+    ],
+    dept: 'IT & CSE(DS)',
+  },
+  {
+    position: 'Admin Head',
+    members: [
+      { name: 'Gargi Betawadkar', actor: 'Alia Bhatt', image: '/actors/alia.jpg' },
+      { name: 'Shreya Dadhekar', actor: 'Zendaya', image: '/actors/zendaya.jpg' },
+      { name: 'Saivamehi Jilla', actor: 'Katrina Kaif', image: '/actors/katrina.jpg' },
+    ],
+    dept: 'COMPS & CSE(DS)',
+  },
 ];
 
 export const MembersPage = ({ onOpenApply }) => {
@@ -58,7 +114,7 @@ export const MembersPage = ({ onOpenApply }) => {
             <GraduationCap className="w-3.5 h-3.5" />
             <span>Chapter Governance & Student Leadership 2025-26</span>
           </div>
-          <h1 className="font-collegiate-serif text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Faculty Mentors & Executive Council
           </h1>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
@@ -69,7 +125,7 @@ export const MembersPage = ({ onOpenApply }) => {
           <div className="pt-2 flex justify-center items-center space-x-2">
             <button
               onClick={() => setViewMode('grid')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                 viewMode === 'grid'
                   ? 'bg-blue-700 text-white shadow-xs'
                   : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
@@ -80,7 +136,7 @@ export const MembersPage = ({ onOpenApply }) => {
             </button>
             <button
               onClick={() => setViewMode('table')}
-              className={`inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors ${
                 viewMode === 'table'
                   ? 'bg-blue-700 text-white shadow-xs'
                   : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800'
@@ -97,7 +153,7 @@ export const MembersPage = ({ onOpenApply }) => {
           <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
             <div className="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-800">
               <div>
-                <h3 className="font-collegiate-serif text-2xl font-bold text-blue-900 dark:text-blue-400">
+                <h3 className="font-heading text-2xl font-bold text-blue-900 dark:text-blue-400">
                   CSI Committee (2025-26) :
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -117,7 +173,7 @@ export const MembersPage = ({ onOpenApply }) => {
                       Position
                     </th>
                     <th className="py-3.5 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
-                      Name
+                      Leader & Star Avatar
                     </th>
                     <th className="py-3.5 px-4 sm:px-6 font-bold w-1/4">
                       Department
@@ -134,17 +190,29 @@ export const MembersPage = ({ onOpenApply }) => {
                           : 'bg-slate-50/70 dark:bg-slate-800/50'
                       }
                     >
-                      <td className="py-3.5 px-4 sm:px-6 font-bold text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800 align-top">
+                      <td className="py-3.5 px-4 sm:px-6 font-bold text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800 align-middle">
                         {row.position}
                       </td>
-                      <td className="py-3.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-1">
-                        {row.names.map((n, i) => (
-                          <div key={i} className="font-medium">
-                            {n}
+                      <td className="py-3.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-2">
+                        {row.members.map((m, i) => (
+                          <div key={i} className="flex items-center space-x-3 py-0.5">
+                            <img
+                              src={m.image}
+                              alt={m.actor}
+                              className="w-9 h-9 rounded-full object-cover border-2 border-blue-500/40 shadow-2xs shrink-0"
+                            />
+                            <div>
+                              <div className="font-semibold text-slate-900 dark:text-white">
+                                {m.name}
+                              </div>
+                              <div className="text-[11px] text-blue-700 dark:text-blue-400 font-medium">
+                                {m.actor}
+                              </div>
+                            </div>
                           </div>
                         ))}
                       </td>
-                      <td className="py-3.5 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 text-xs font-semibold">
+                      <td className="py-3.5 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 text-xs font-semibold align-middle">
                         {row.dept}
                       </td>
                     </tr>
@@ -189,7 +257,7 @@ export const MembersPage = ({ onOpenApply }) => {
                       {/* Photo Container */}
                       <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
                         <img
-                          src={member.imageUrl || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400'}
+                          src={member.imageUrl || '/actors/rdj.jpg'}
                           alt={member.name}
                           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                         />
@@ -205,11 +273,18 @@ export const MembersPage = ({ onOpenApply }) => {
                             </span>
                           </div>
                         )}
+                        {member.starAvatar && (
+                          <div className="absolute bottom-2 left-2 right-2">
+                            <span className="block px-2 py-1 rounded-lg text-[10px] font-bold bg-slate-950/85 text-amber-300 border border-amber-400/30 backdrop-blur-md shadow-xs truncate">
+                              ⭐ {member.starAvatar}
+                            </span>
+                          </div>
+                        )}
                       </div>
 
                       {/* Details */}
                       <div className="p-5 space-y-1.5">
-                        <h3 className="font-extrabold text-slate-900 dark:text-white text-base group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+                        <h3 className="font-heading font-extrabold text-slate-900 dark:text-white text-base group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                           {member.name}
                         </h3>
                         <p className="text-xs font-bold text-blue-600 dark:text-blue-400">
@@ -261,7 +336,7 @@ export const MembersPage = ({ onOpenApply }) => {
 
         {/* Join Council Callout */}
         <div className="mt-12 bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800 text-center max-w-3xl mx-auto shadow-sm">
-          <h3 className="font-collegiate-serif text-xl font-bold text-slate-900 dark:text-white">
+          <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
             Interested in joining the CSI VCET Council?
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl mx-auto">

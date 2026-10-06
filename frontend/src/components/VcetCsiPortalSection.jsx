@@ -4,14 +4,15 @@ import { Info, Image, User, Users, Mail, Phone, FileText, Download, CheckCircle,
 export const VcetCsiPortalSection = () => {
   const [activeTab, setActiveTab] = useState('faculty');
 
-  // Faculty Coordinators matching Image 2
+  // Faculty Coordinators with Bollywood & Avengers Star Personas
   const facultyList = [
     {
       name: 'Dr. Swati Varma',
       dept: '(Computer Engg.)',
       email: 'swati.varma@vcet.edu.in',
       phone: '9869775463',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80',
+      image: '/actors/deepika.jpg',
+      actorAvatar: 'Deepika Padukone',
       role: 'Associate Professor & Faculty Coordinator',
     },
     {
@@ -19,7 +20,8 @@ export const VcetCsiPortalSection = () => {
       dept: '(CSE-DS)',
       email: 'maya.varghese@vcet.edu.in',
       phone: '9699547709',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=80',
+      image: '/actors/elizabeth_olsen.jpg',
+      actorAvatar: 'Elizabeth Olsen (Scarlet Witch)',
       role: 'Assistant Professor & Faculty Coordinator',
     },
     {
@@ -27,67 +29,68 @@ export const VcetCsiPortalSection = () => {
       dept: '(InfoTech.)',
       email: 'pragati.patil@vcet.edu.in',
       phone: '9769990253',
-      image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=500&auto=format&fit=crop&q=80',
+      image: '/actors/scarlett.jpg',
+      actorAvatar: 'Scarlett Johansson (Black Widow)',
       role: 'Assistant Professor & Faculty Coordinator',
     },
   ];
 
-  // CSI Committee 2025-26 matching Image 3 Table
+  // CSI Committee 2025-26 with Bollywood & Avengers Star Personas
   const committeeData = [
     {
       position: 'Chairperson',
-      members: [{ name: 'Siddharth Chakravarty', dept: 'CSE(DS)' }],
+      members: [{ name: 'Siddharth Chakravarty', dept: 'CSE(DS)', image: '/actors/rdj.jpg', actor: 'Robert Downey Jr. (Iron Man)' }],
     },
     {
       position: 'Treasurer',
-      members: [{ name: 'Aditya Bawane', dept: 'IT' }],
+      members: [{ name: 'Aditya Bawane', dept: 'IT', image: '/actors/cumberbatch.jpg', actor: 'Benedict Cumberbatch (Dr. Strange)' }],
     },
     {
       position: 'Secretary',
       members: [
-        { name: 'Pranay Ippakayal', dept: 'IT' },
-        { name: 'Sangini Shetty', dept: 'IT' },
+        { name: 'Pranay Ippakayal', dept: 'IT', image: '/actors/srk.jpg', actor: 'Shah Rukh Khan' },
+        { name: 'Sangini Shetty', dept: 'IT', image: '/actors/alia.jpg', actor: 'Alia Bhatt' },
       ],
     },
     {
       position: 'Joint Secretary',
       members: [
-        { name: 'Vatsal Makadiya', dept: 'COMPS' },
-        { name: 'Sumit Mali', dept: 'COMPS' },
+        { name: 'Vatsal Makadiya', dept: 'COMPS', image: '/actors/chrisevans.jpg', actor: 'Chris Evans (Captain America)' },
+        { name: 'Sumit Mali', dept: 'COMPS', image: '/actors/hemsworth.jpg', actor: 'Chris Hemsworth (Thor)' },
       ],
     },
     {
       position: 'Technical Head',
       members: [
-        { name: 'Wajiha Kulsum', dept: 'COMPS' },
-        { name: 'Shubham Singh', dept: 'IT' },
-        { name: 'Parth Vasave', dept: 'CSE(DS)' },
+        { name: 'Wajiha Kulsum', dept: 'COMPS', image: '/actors/zendaya.jpg', actor: 'Zendaya (MJ)' },
+        { name: 'Shubham Singh', dept: 'IT', image: '/actors/tomholland.jpg', actor: 'Tom Holland (Spider-Man)' },
+        { name: 'Parth Vasave', dept: 'CSE(DS)', image: '/actors/markruffalo.jpg', actor: 'Mark Ruffalo (Hulk)' },
       ],
     },
     {
       position: 'Organizing Head',
       members: [
-        { name: 'Shreya Kathe', dept: 'IT' },
-        { name: 'Kunal Patil', dept: 'IT' },
-        { name: 'Aditi Gupta', dept: 'IT' },
-        { name: 'Bhumi Kamble', dept: 'IT' },
-        { name: 'Aditi Rasal', dept: 'CSE(DS)' },
+        { name: 'Shreya Kathe', dept: 'IT', image: '/actors/katrina.jpg', actor: 'Katrina Kaif' },
+        { name: 'Kunal Patil', dept: 'IT', image: '/actors/hrithik.jpg', actor: 'Hrithik Roshan' },
+        { name: 'Aditi Gupta', dept: 'IT', image: '/actors/kareena.jpg', actor: 'Kareena Kapoor' },
+        { name: 'Bhumi Kamble', dept: 'IT', image: '/actors/anushka.jpg', actor: 'Anushka Sharma' },
+        { name: 'Aditi Rasal', dept: 'CSE(DS)', image: '/actors/deepika.jpg', actor: 'Deepika Padukone' },
       ],
     },
     {
       position: 'PR Head',
       members: [
-        { name: 'Meenakshi Kshirsagar', dept: 'IT' },
-        { name: 'Khushi Machhi', dept: 'IT' },
-        { name: 'Shardul Brid', dept: 'CSE(DS)' },
+        { name: 'Meenakshi Kshirsagar', dept: 'IT', image: '/actors/elizabeth_olsen.jpg', actor: 'Elizabeth Olsen' },
+        { name: 'Khushi Machhi', dept: 'IT', image: '/actors/scarlett.jpg', actor: 'Scarlett Johansson' },
+        { name: 'Shardul Brid', dept: 'CSE(DS)', image: '/actors/ranveer.jpg', actor: 'Ranveer Singh' },
       ],
     },
     {
       position: 'Admin Head',
       members: [
-        { name: 'Gargi Betawadkar', dept: 'COMPS' },
-        { name: 'Shreya Dadhekar', dept: 'CSE(DS)' },
-        { name: 'Saivamehi Jilla', dept: 'COMPS' },
+        { name: 'Gargi Betawadkar', dept: 'COMPS', image: '/actors/alia.jpg', actor: 'Alia Bhatt' },
+        { name: 'Shreya Dadhekar', dept: 'CSE(DS)', image: '/actors/zendaya.jpg', actor: 'Zendaya' },
+        { name: 'Saivamehi Jilla', dept: 'COMPS', image: '/actors/katrina.jpg', actor: 'Katrina Kaif' },
       ],
     },
   ];
@@ -137,7 +140,7 @@ export const VcetCsiPortalSection = () => {
               <span>»</span>
               <span>CSI VCET Chapter</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-collegiate-serif font-extrabold tracking-tight text-white">
+            <h2 className="text-2xl sm:text-3xl font-heading font-extrabold tracking-tight text-white">
               Computer Society of India
             </h2>
             <p className="text-xs sm:text-sm text-slate-300">
@@ -207,7 +210,7 @@ export const VcetCsiPortalSection = () => {
             {activeTab === 'faculty' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-collegiate-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                     Faculty Coordinators
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -222,17 +225,17 @@ export const VcetCsiPortalSection = () => {
                       className="bg-slate-50 dark:bg-slate-800/80 rounded-2xl border border-slate-200/90 dark:border-slate-700 overflow-hidden shadow-2xs hover:shadow-md transition-all flex flex-col justify-between"
                     >
                       <div className="p-4 flex flex-col items-center text-center">
-                        {/* Portrait Photo */}
-                        <div className="w-28 h-32 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700 mb-3 shadow-inner">
+                        {/* Portrait Photo (Bollywood / Avengers Star) */}
+                        <div className="w-28 h-32 rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-700 mb-3 shadow-inner relative group">
                           <img
                             src={fac.image}
                             alt={fac.name}
-                            className="w-full h-full object-cover object-top"
+                            className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                           />
                         </div>
 
                         {/* Name in Golden / Amber Hue as in Image 2 */}
-                        <h4 className="font-bold text-sm text-amber-700 dark:text-amber-400">
+                        <h4 className="font-heading font-bold text-base text-amber-700 dark:text-amber-400">
                           {fac.name}
                         </h4>
                         <p className="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-0.5">
@@ -241,6 +244,9 @@ export const VcetCsiPortalSection = () => {
                         <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
                           {fac.role}
                         </p>
+                        <span className="inline-flex items-center px-2 py-0.5 mt-2 text-[10px] font-bold rounded-full bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                          ⭐ {fac.actorAvatar}
+                        </span>
                       </div>
 
                       {/* Contact Info (Matching Image 2 email & phone) */}
@@ -270,15 +276,15 @@ export const VcetCsiPortalSection = () => {
             {activeTab === 'students' && (
               <div className="space-y-8">
                 <div>
-                  <h3 className="font-collegiate-serif text-xl sm:text-2xl font-bold text-blue-900 dark:text-blue-400">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-blue-900 dark:text-blue-400">
                     CSI Committee (2025-26) :
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    Official executive council roster for the current academic tenure.
+                    Official executive council roster featuring Bollywood & Avengers avatar portraits.
                   </p>
                 </div>
 
-                {/* Structured Institutional Table (Matching Image 3 Navy Header Table) */}
+                {/* Structured Institutional Table (Matching Image 3 Navy Header Table with Star Photos) */}
                 <div className="rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-xs">
                   <table className="w-full text-left border-collapse text-xs sm:text-sm">
                     <thead>
@@ -287,7 +293,7 @@ export const VcetCsiPortalSection = () => {
                           Position
                         </th>
                         <th className="py-3 px-4 sm:px-6 font-bold w-1/2 border-r border-blue-900">
-                          Name
+                          Student Leader & Star Avatar
                         </th>
                         <th className="py-3 px-4 sm:px-6 font-bold w-1/4">
                           Department
@@ -305,21 +311,33 @@ export const VcetCsiPortalSection = () => {
                           }
                         >
                           {/* Position Column */}
-                          <td className="py-3 px-4 sm:px-6 font-bold text-slate-800 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800 align-top">
+                          <td className="py-3 px-4 sm:px-6 font-bold text-slate-800 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800 align-middle">
                             {row.position}
                           </td>
 
-                          {/* Name Column (Supports multiple members per position) */}
-                          <td className="py-3 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-1">
+                          {/* Name & Star Actor Photo Column */}
+                          <td className="py-2.5 px-4 sm:px-6 text-slate-700 dark:text-slate-300 border-r border-slate-200 dark:border-slate-800 space-y-2">
                             {row.members.map((m, mIdx) => (
-                              <div key={mIdx} className="font-medium">
-                                {m.name}
+                              <div key={mIdx} className="flex items-center space-x-3 py-1">
+                                <img
+                                  src={m.image}
+                                  alt={m.actor}
+                                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-500/40 shadow-xs shrink-0"
+                                />
+                                <div>
+                                  <div className="font-semibold text-slate-900 dark:text-white leading-tight">
+                                    {m.name}
+                                  </div>
+                                  <div className="text-[11px] text-blue-700 dark:text-blue-400 font-medium">
+                                    {m.actor}
+                                  </div>
+                                </div>
                               </div>
                             ))}
                           </td>
 
                           {/* Department Column */}
-                          <td className="py-3 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 space-y-1">
+                          <td className="py-3 px-4 sm:px-6 font-mono text-slate-600 dark:text-slate-400 space-y-1 align-middle">
                             {row.members.map((m, mIdx) => (
                               <div key={mIdx} className="text-xs font-semibold">
                                 {m.dept}
@@ -334,7 +352,7 @@ export const VcetCsiPortalSection = () => {
 
                 {/* Annual Reports Archive (Matching Image 3) */}
                 <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
-                  <h4 className="font-collegiate-serif text-lg font-bold text-blue-900 dark:text-blue-400">
+                  <h4 className="font-heading text-lg font-bold text-blue-900 dark:text-blue-400">
                     Reports - Events and Committee Details :
                   </h4>
                   <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -368,7 +386,7 @@ export const VcetCsiPortalSection = () => {
             {activeTab === 'about' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-collegiate-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                     About CSI VCET Chapter
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
@@ -402,7 +420,7 @@ export const VcetCsiPortalSection = () => {
             {activeTab === 'gallery' && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="font-collegiate-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                     Chapter Photo Gallery
                   </h3>
                   <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">

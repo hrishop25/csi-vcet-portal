@@ -34,7 +34,7 @@ export const EventsSection = ({ onOpenApply }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">Flagship Calendar</span>
-            <h2 className="font-collegiate-serif text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Events & Technical Bootcamps</h2>
+            <h2 className="font-heading text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Events & Technical Bootcamps</h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-xl">
               From high-stakes hackathons to in-depth developer bootcamps, explore the events driving tech culture at VCET.
             </p>
@@ -94,7 +94,7 @@ export const EventsSection = ({ onOpenApply }) => {
 
                   {/* Body Details */}
                   <div className="p-5">
-                    <h3 className="font-collegiate-serif text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+                    <h3 className="font-heading text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                       {item.title}
                     </h3>
                     {item.subtitle && (

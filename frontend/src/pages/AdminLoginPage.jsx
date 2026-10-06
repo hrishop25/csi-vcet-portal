@@ -40,9 +40,9 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
             <ThemeToggle compact={true} />
           </div>
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-700 to-indigo-900 p-2 mx-auto flex items-center justify-center shadow-lg border border-blue-500/30">
-            <img src="/csi-medallion.svg" alt="Medallion" className="w-12 h-12 object-contain" />
+            <img src="/csi-logo.svg" alt="CSI Emblem" className="w-12 h-12 object-contain" />
           </div>
-          <h2 className="font-collegiate-serif text-2xl font-extrabold tracking-tight">Admin & Core Portal</h2>
+          <h2 className="font-heading text-2xl font-extrabold tracking-tight">Admin & Core Portal</h2>
           <p className="text-xs text-slate-300 font-sans">
             Computer Society of India • VCET Student Chapter
           </p>

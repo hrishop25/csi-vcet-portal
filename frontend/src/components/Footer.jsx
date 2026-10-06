@@ -11,11 +11,11 @@ export const Footer = ({ setActiveView, onOpenApply }) => {
           {/* Chapter Branding */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-xl bg-blue-900/60 p-1.5 flex items-center justify-center border border-blue-600/40">
-                <img src="/csi-medallion.svg" alt="CSI Logo" className="w-9 h-9 object-contain" />
+              <div className="w-12 h-12 rounded-xl bg-blue-900/40 p-1.5 flex items-center justify-center border border-blue-600/40">
+                <img src="/csi-logo.svg" alt="CSI Logo" className="w-9 h-9 object-contain" />
               </div>
               <div>
-                <h4 className="font-collegiate-serif font-extrabold text-white text-base tracking-wide">
+                <h4 className="font-heading font-extrabold text-white text-base tracking-wide">
                   CSI VCET CHAPTER
                 </h4>
                 <p className="text-[10px] text-amber-400 font-semibold tracking-wider uppercase">

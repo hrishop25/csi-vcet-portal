@@ -13,14 +13,14 @@ export const ConstitutionPage = () => {
         <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-slate-800 shadow-sm space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800 gap-4">
             <div className="flex items-center space-x-3">
-              <div className="w-14 h-14 rounded-2xl bg-blue-900/20 p-1 flex items-center justify-center">
-                <img src="/csi-medallion.svg" alt="CSI Logo" className="w-12 h-12 object-contain" />
+              <div className="w-14 h-14 rounded-2xl bg-blue-900/10 dark:bg-blue-900/30 p-1.5 flex items-center justify-center border border-blue-200 dark:border-blue-800">
+                <img src="/csi-logo.svg" alt="CSI Logo" className="w-11 h-11 object-contain" />
               </div>
               <div>
                 <span className="text-[11px] font-bold tracking-widest text-blue-700 dark:text-blue-400 uppercase">
                   OFFICIAL INSTITUTIONAL BYLAWS
                 </span>
-                <h1 className="font-collegiate-serif text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                <h1 className="font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Chapter Constitution
                 </h1>
               </div>
@@ -43,7 +43,7 @@ export const ConstitutionPage = () => {
               <Scale className="w-4 h-4 text-blue-700 dark:text-blue-400" />
               <span>Preamble</span>
             </div>
-            <p className="font-collegiate-serif text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic font-sans">
               "We, the student body and faculty coordinators of Vidyavardhini's College of Engineering and Technology (VCET), operating under the charter of the Computer Society of India (CSI), hereby establish this Constitution to foster excellence in computer science and information technology, encourage peer research and collaborative engineering, uphold ethical standards in technological practice, and provide an enduring platform for student leadership."
             </p>
           </div>
@@ -54,7 +54,7 @@ export const ConstitutionPage = () => {
             <section className="space-y-3">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center space-x-2">
                 <span className="px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono">Art. I</span>
-                <span className="font-collegiate-serif">Name, Jurisdiction & Affiliation</span>
+                <span className="font-heading">Name, Jurisdiction & Affiliation</span>
               </h2>
               <p className="leading-relaxed">
                 The name of this organization shall be the <strong>Computer Society of India - Student Chapter at Vidyavardhini's College of Engineering and Technology</strong> (hereinafter referenced as "CSI VCET"). The chapter functions under the patronage of the Department of Computer Engineering and is recognized by the Computer Society of India Mumbai Chapter (Region VII).
@@ -65,7 +65,7 @@ export const ConstitutionPage = () => {
             <section className="space-y-3">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center space-x-2">
                 <span className="px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono">Art. II</span>
-                <span className="font-collegiate-serif">Core Objectives</span>
+                <span className="font-heading">Core Objectives</span>
               </h2>
               <ul className="space-y-2 list-none pl-0">
                 {[
@@ -86,7 +86,7 @@ export const ConstitutionPage = () => {
             <section className="space-y-3">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center space-x-2">
                 <span className="px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono">Art. III</span>
-                <span className="font-collegiate-serif">Membership & Eligibility</span>
+                <span className="font-heading">Membership & Eligibility</span>
               </h2>
               <p className="leading-relaxed">
                 Membership in CSI VCET is open to all enrolled students at VCET irrespective of branch. Formal membership confers rights to voting in general bodies, priority registration in paid workshops, discount allowances for HackVCET, and eligibility to stand for Executive Council elections.
@@ -97,7 +97,7 @@ export const ConstitutionPage = () => {
             <section className="space-y-3">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center space-x-2">
                 <span className="px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono">Art. IV</span>
-                <span className="font-collegiate-serif">Executive Council Hierarchy</span>
+                <span className="font-heading">Executive Council Hierarchy</span>
               </h2>
               <p className="leading-relaxed">
                 The Chapter is administered by an Executive Council appointed each academic tenure under the guidance of the Branch Counselor:
@@ -126,7 +126,7 @@ export const ConstitutionPage = () => {
             <section className="space-y-3">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-2 flex items-center space-x-2">
                 <span className="px-2 py-0.5 rounded bg-slate-900 dark:bg-slate-800 text-white text-xs font-mono">Art. V</span>
-                <span className="font-collegiate-serif">Code of Ethics & Non-Discrimination</span>
+                <span className="font-heading">Code of Ethics & Non-Discrimination</span>
               </h2>
               <p className="leading-relaxed">
                 All council members and student affiliates shall maintain the highest standards of academic integrity, intellectual honesty, and inclusivity. Harassment, unauthorized code plagiarism, or misuse of chapter finances will result in immediate disqualification and referral to the College Disciplinary Committee.

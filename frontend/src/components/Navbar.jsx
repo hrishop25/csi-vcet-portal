@@ -49,37 +49,27 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
       {/* Main Collegiate Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-20">
-          {/* Left Title - Styled exactly like "The Columns Society" in reference */}
+          {/* Left Title & Chapter Brand Icon */}
           <button
             onClick={() => setActiveView('home')}
-            className="flex flex-col text-left group focus:outline-none z-20"
+            className="flex items-center space-x-3.5 text-left group focus:outline-none z-20"
           >
-            <div className="flex items-center space-x-2">
-              <span className="font-collegiate-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
+            <div className="w-11 h-11 rounded-xl bg-blue-50 dark:bg-slate-800 p-1 border border-blue-200 dark:border-blue-900/50 shadow-xs group-hover:shadow-md group-hover:scale-105 transition-all duration-200 shrink-0">
+              <img
+                src="/csi-logo.svg"
+                alt="CSI VCET Emblem"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors leading-tight">
                 The Computer Society
               </span>
+              <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 tracking-wide uppercase">
+                CSI Student Chapter • VCET Vasai
+              </p>
             </div>
-            <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400 tracking-wide uppercase">
-              CSI Student Chapter • VCET Vasai
-            </p>
           </button>
-
-          {/* Center Circular Medallion (Overlapping Header & Banner, exactly matching reference image!) */}
-          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-1 z-30 pointer-events-auto">
-            <button
-              onClick={() => setActiveView('home')}
-              className="group focus:outline-none transform hover:scale-105 transition-transform duration-200"
-              title="Vidyavardhini's College of Engineering & Technology - CSI Chapter"
-            >
-              <div className="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-xl">
-                <img
-                  src="/csi-medallion.svg"
-                  alt="VCET CSI Seal"
-                  className="w-full h-full object-contain filter group-hover:brightness-110 transition-all"
-                />
-              </div>
-            </button>
-          </div>
 
           {/* Right Navigation Links (Matching Home, Members, Constitution, Contact + Theme Toggle & Admin) */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-3 z-20">

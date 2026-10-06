@@ -18,7 +18,7 @@ export const ContactPage = () => {
           <span className="text-xs font-bold text-blue-700 dark:text-blue-400 uppercase tracking-widest">
             Institutional Liaison
           </span>
-          <h1 className="font-collegiate-serif text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Contact CSI VCET Chapter
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
@@ -30,7 +30,7 @@ export const ContactPage = () => {
           {/* Left Column: Official Campus Contact Info (Matching Image 2 VCET website) */}
           <div className="lg:col-span-5 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
             <div>
-              <h3 className="font-collegiate-serif text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
                 Campus Secretariat
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -100,7 +100,7 @@ export const ContactPage = () => {
                 <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h3 className="font-collegiate-serif text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">
                   Message Dispatched
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-sm mx-auto">
@@ -115,7 +115,7 @@ export const ContactPage = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                <h3 className="font-collegiate-serif text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
                   Send Chapter Dispatch
                 </h3>
 

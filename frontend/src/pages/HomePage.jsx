@@ -41,7 +41,7 @@ export const HomePage = ({ setActiveView, onOpenApply }) => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Academic Tenure 2026-27 Selection</span>
             </div>
-            <h3 className="font-collegiate-serif text-2xl sm:text-3xl font-extrabold tracking-tight">
+            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold tracking-tight">
               Join the Executive Roster of CSI VCET
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">

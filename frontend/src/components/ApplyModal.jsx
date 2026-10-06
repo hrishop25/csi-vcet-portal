@@ -86,7 +86,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Recruitment 2026-27</span>
             </div>
-            <h3 className="font-collegiate-serif text-xl sm:text-2xl font-extrabold tracking-tight">
+            <h3 className="font-heading text-xl sm:text-2xl font-extrabold tracking-tight">
               Join the CSI VCET Student Council
             </h3>
             <p className="text-xs sm:text-sm text-slate-300">
@@ -108,7 +108,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-inner">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h4 className="font-collegiate-serif text-2xl font-bold text-slate-900 dark:text-white">Application Submitted!</h4>
+              <h4 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Application Submitted!</h4>
               <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
                 Thank you for applying to the CSI VCET Student Chapter. Your application has been logged into the Core Committee review queue. Shortlisted candidates will receive interview details on their registered email.
               </p>

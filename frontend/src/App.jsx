@@ -65,7 +65,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-200">
-      {/* Top Collegiate Navigation (Matches "The Columns Society" header & center medallion) */}
+      {/* Modern Top Navigation Bar */}
       <Navbar
         activeView={activeView}
         setActiveView={setActiveView}

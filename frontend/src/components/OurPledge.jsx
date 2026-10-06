@@ -16,10 +16,10 @@ export const OurPledge = ({ onNavigateConstitution }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
 
-            {/* Overlapping "Our Pledge" Badge in the Bottom-Right Corner (Exact match to reference!) */}
+            {/* Overlapping "Our Pledge" Badge in the Bottom-Right Corner */}
             <div className="absolute bottom-3 right-3 z-10">
               <div className="bg-white dark:bg-slate-900 px-4 py-1.5 rounded-xl shadow-lg border border-slate-200/80 dark:border-slate-700">
-                <span className="font-collegiate-serif text-lg sm:text-xl font-bold text-[#0f172a] dark:text-white tracking-tight">
+                <span className="font-heading text-lg sm:text-xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
                   Our Pledge
                 </span>
               </div>
@@ -27,9 +27,9 @@ export const OurPledge = ({ onNavigateConstitution }) => {
           </div>
         </div>
 
-        {/* Pledge Text below the framed photo (Exact match to reference style!) */}
+        {/* Pledge Text below the framed photo */}
         <div className="space-y-3 px-1">
-          <p className="font-collegiate-serif italic text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
+          <p className="font-sans italic text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-relaxed">
             "I pledge my time, energy, and talents to serve the student fraternity of Vidyavardhini's College of Engineering & Technology, uphold the ethical principles of the Computer Society of India, and advance computing excellence with diligence, humble leadership, and integrity."
           </p>
 

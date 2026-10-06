@@ -8,14 +8,14 @@ export const WhoWeAre = () => {
         {/* Distinct Header Tab matching reference "Who We Are" pill */}
         <div className="mb-5">
           <div className="inline-block bg-white dark:bg-slate-800 px-6 py-2.5 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700">
-            <h2 className="font-collegiate-serif text-2xl sm:text-3xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
               Who We Are
             </h2>
           </div>
         </div>
 
-        {/* Narrative Text - Grounded, authentic collegiate tone (Not AI-ish!) */}
-        <p className="font-collegiate-serif text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
+        {/* Narrative Text - Grounded, authentic collegiate tone */}
+        <p className="text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-relaxed mb-6 font-sans">
           The <strong>Computer Society of India (CSI) Student Chapter</strong> at{' '}
           <span className="font-semibold text-slate-950 dark:text-white">
             Vidyavardhini's College of Engineering and Technology
