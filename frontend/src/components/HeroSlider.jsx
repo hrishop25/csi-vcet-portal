@@ -1,34 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Users, Award, Calendar, Sparkles } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
     id: 1,
     image: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&auto=format&fit=crop&q=85',
-    tag: 'ANNUAL CHAPTER ASSEMBLY 2025-26',
-    title: 'Computer Society of India VCET Chapter',
-    subtitle: 'Nurturing the Next Generation of Technologists, Innovators, and Engineers at VCET Vasai.',
-    highlight: 'Over 450+ Active Student Members Across Computer, IT & AI-DS',
+    alt: 'CSI VCET Chapter Assembly Group Photo',
+    collegeLine: "Vidyavardhini's College of Engineering & Technology",
+    societyLine: 'Computer Society of India Student Chapter',
+    caption: 'Annual Assembly of Executive Council & Faculty Advisors',
   },
   {
     id: 2,
     image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&auto=format&fit=crop&q=85',
-    tag: 'FLAGSHIP HACKATHON',
-    title: 'HackVCET: Code for India 2026',
-    subtitle: '36 Hours of Non-stop Code, Mentorship from Silicon Valley Veterans, and ₹1,00,000+ in Bounties.',
-    highlight: '50+ Teams Selected Nationwide • University Recognized',
+    alt: 'HackVCET Hackathon Participants and Mentors',
+    collegeLine: 'Department of Computer Engineering & Information Technology',
+    societyLine: 'HackVCET: National Student Hackathon 2026',
+    caption: '36-Hour Flagship Hackathon in Association with CSI Mumbai',
   },
   {
     id: 3,
     image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=1600&auto=format&fit=crop&q=85',
-    tag: 'TECHNICAL EXCELLENCE & HANDS-ON WORKSHOPS',
-    title: 'Empowering Student Pioneers in AI, Web3 & Cloud',
-    subtitle: 'Peer-led bootcamps, open-source projects, and industry networking tailored for undergraduates.',
-    highlight: '100% Student-Led • Mentored by Distinguished VCET Faculty',
+    alt: 'Technical Seminar and Workshop in VCET Auditorium',
+    collegeLine: 'VCET Campus • Vasai Road (W)',
+    societyLine: 'Technical Excellence & Student Mentorship',
+    caption: 'Hands-on Developer Bootcamps & Systems Architecture Seminars',
+  },
+  {
+    id: 4,
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&auto=format&fit=crop&q=85',
+    alt: 'CSI VCET Project Showcase and Committee Meeting',
+    collegeLine: 'Autonomous Institute Affiliated to University of Mumbai',
+    societyLine: 'Council Induction & Student Leadership 2025-26',
+    caption: 'Empowering Student Innovators Since 2008',
   },
 ];
 
-export const HeroSlider = ({ onOpenApply, onNavigateMembers }) => {
+export const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -50,12 +58,12 @@ export const HeroSlider = ({ onOpenApply, onNavigateMembers }) => {
 
   return (
     <div
-      className="relative w-full bg-slate-950 overflow-hidden shadow-2xl"
+      className="relative w-full bg-slate-950 overflow-hidden select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Slider Viewport */}
-      <div className="relative h-[480px] sm:h-[540px] md:h-[600px] w-full">
+      {/* Slider Viewport (Matching reference height & collegiate aspect) */}
+      <div className="relative h-[380px] sm:h-[460px] md:h-[520px] lg:h-[560px] w-full">
         {slides.map((slide, index) => {
           const isActive = index === currentSlide;
           return (
@@ -65,97 +73,68 @@ export const HeroSlider = ({ onOpenApply, onNavigateMembers }) => {
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
             >
-              {/* Background Photo with Collegiate Dark Gradient Overlay */}
+              {/* Background Photo with Distinct Collegiate Blue Tint (Matching Reference Photo Style!) */}
               <img
                 src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.08] transform scale-105 transition-transform duration-7000 ease-out"
+                alt={slide.alt}
+                className="w-full h-full object-cover object-center filter brightness-[0.70] contrast-[1.12]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/40 to-transparent" />
 
-              {/* Slide Content Box */}
-              <div className="absolute inset-0 flex items-center">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                  <div className="max-w-2xl text-left space-y-4">
-                    {/* Badge */}
-                    <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wider backdrop-blur-md">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-                      <span>{slide.tag}</span>
-                    </div>
+              {/* Collegiate Royal Blue Photo Tint (Matches the exact dark blue/indigo color cast in the reference screenshot) */}
+              <div className="absolute inset-0 bg-[#0f172a]/40 mix-blend-multiply pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30 pointer-events-none" />
 
-                    {/* Headline */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight drop-shadow-md">
-                      {slide.title}
-                    </h1>
-
-                    {/* Subtitle */}
-                    <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed max-w-xl font-normal drop-shadow">
-                      {slide.subtitle}
-                    </p>
-
-                    {/* Feature Pill */}
-                    <div className="pt-1 flex items-center space-x-2 text-xs sm:text-sm text-amber-400 font-semibold">
-                      <Award className="w-4 h-4 text-amber-400 shrink-0" />
-                      <span>{slide.highlight}</span>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="pt-4 flex flex-wrap gap-3">
-                      <button
-                        onClick={onOpenApply}
-                        className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-xl shadow-lg shadow-blue-900/50 hover:shadow-blue-700/50 transition-all duration-200 transform hover:-translate-y-0.5"
-                      >
-                        Join Chapter / Apply Now
-                      </button>
-                      <button
-                        onClick={onNavigateMembers}
-                        className="px-5 py-3 bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-sm rounded-xl border border-slate-700 backdrop-blur-sm transition-colors flex items-center space-x-2"
-                      >
-                        <Users className="w-4 h-4 text-blue-400" />
-                        <span>Meet Our Council</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              {/* Bottom-Right Overlay Text (Exact layout & typography matching reference image) */}
+              <div className="absolute bottom-10 right-6 sm:bottom-12 sm:right-12 z-20 text-right max-w-lg pointer-events-none">
+                <p className="font-collegiate-serif text-lg sm:text-2xl md:text-3xl font-bold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] leading-tight">
+                  {slide.collegeLine}
+                </p>
+                <p className="font-collegiate-serif text-base sm:text-xl md:text-2xl font-semibold text-blue-200 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mt-0.5">
+                  {slide.societyLine}
+                </p>
+                <p className="text-xs text-slate-300 font-sans tracking-wide mt-1 drop-shadow hidden sm:block">
+                  {slide.caption}
+                </p>
               </div>
             </div>
           );
         })}
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Thin Navigation Arrows on Left and Right (Exact match to reference '<' and '>') */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white/80 hover:text-white border border-slate-700/60 backdrop-blur-md transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 text-white/75 hover:text-white transition-all transform hover:scale-125 focus:outline-none drop-shadow-md"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white/80 hover:text-white border border-slate-700/60 backdrop-blur-md transition-all focus:outline-none focus:ring-2 focus:ring-blue-500"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 stroke-[1.75]" />
       </button>
 
-      {/* Bottom Indicators & Slide Progress */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-2.5">
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-3 text-white/75 hover:text-white transition-all transform hover:scale-125 focus:outline-none drop-shadow-md"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 stroke-[1.75]" />
+      </button>
+
+      {/* 4 Bottom Center Dots (Exact match to reference dots!) */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-2">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentSlide(i)}
             className={`transition-all duration-300 rounded-full ${
               i === currentSlide
-                ? 'w-8 h-2.5 bg-amber-400'
-                : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/70'
+                ? 'w-2.5 h-2.5 bg-white scale-125 shadow-xs'
+                : 'w-2 h-2 bg-white/40 hover:bg-white/75'
             }`}
-            aria-label={`Go to slide ${i + 1}`}
+            aria-label={`Slide ${i + 1}`}
           />
         ))}
       </div>
     </div>
   );
 };
+
 export default HeroSlider;

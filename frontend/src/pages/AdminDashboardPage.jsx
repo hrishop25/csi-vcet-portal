@@ -194,7 +194,7 @@ export const AdminDashboardPage = () => {
   };
 
   return (
-    <div className="bg-slate-100 min-h-screen py-8">
+    <div className="bg-slate-100 dark:bg-slate-950 min-h-screen py-8 text-slate-800 dark:text-slate-100 transition-colors duration-200">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-2xl border border-slate-700 flex items-center space-x-2 animate-bounce">
@@ -205,31 +205,31 @@ export const AdminDashboardPage = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Top Header Card */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-xs flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="space-y-1">
-            <div className="flex items-center space-x-2 text-xs font-bold text-blue-700 uppercase tracking-wider">
+            <div className="flex items-center space-x-2 text-xs font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider">
               <ShieldCheck className="w-4 h-4 text-amber-500" />
               <span>Chapter Administration Console</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            <h1 className="font-collegiate-serif text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               Recruitment Applications & Candidate Review
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
               Vidyavardhini's College of Engineering and Technology • CSI Chapter Cycle 2026-27
             </p>
           </div>
 
           <div className="flex items-center space-x-3">
             <div className="text-right hidden sm:block">
-              <p className="text-xs font-bold text-slate-800">{user?.name || 'Administrator'}</p>
+              <p className="text-xs font-bold text-slate-800 dark:text-slate-200">{user?.name || 'Administrator'}</p>
               <p className="text-[10px] text-slate-400">{user?.chapterDesignation || 'Core Lead'}</p>
             </div>
             <a
               href={api.exportCSVUrl}
               download
-              className="inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-300 transition-colors shadow-2xs"
+              className="inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl border border-slate-300 dark:border-slate-700 transition-colors shadow-2xs"
             >
-              <Download className="w-3.5 h-3.5 text-blue-700" />
+              <Download className="w-3.5 h-3.5 text-blue-700 dark:text-blue-400" />
               <span>Export CSV</span>
             </a>
             <button
@@ -237,7 +237,7 @@ export const AdminDashboardPage = () => {
                 setRefreshing(true);
                 loadData();
               }}
-              className="p-2 text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl border border-slate-300 transition-colors"
+              className="p-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl border border-slate-300 dark:border-slate-700 transition-colors"
               title="Refresh Records"
             >
               <RefreshCw className={`w-4 h-4 ${refreshing ? 'animate-spin text-blue-600' : ''}`} />
@@ -248,45 +248,45 @@ export const AdminDashboardPage = () => {
         {/* Statistical Summary Metric Cards */}
         {stats && (
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-2xs">
-              <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Total</span>
-              <p className="text-2xl font-black text-slate-900 mt-1">{stats.totalApplications}</p>
+            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xs">
+              <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Total</span>
+              <p className="text-2xl font-black text-slate-900 dark:text-white mt-1">{stats.totalApplications}</p>
               <span className="text-[10px] text-slate-400">Applications</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-amber-200 bg-amber-50/20 shadow-2xs">
-              <span className="text-[11px] font-bold text-amber-700 uppercase tracking-wider flex items-center gap-1">
-                <Clock className="w-3 h-3 text-amber-600" /> Pending
+            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 shadow-2xs">
+              <span className="text-[11px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider flex items-center gap-1">
+                <Clock className="w-3 h-3 text-amber-600 dark:text-amber-400" /> Pending
               </span>
-              <p className="text-2xl font-black text-amber-600 mt-1">{stats.pending}</p>
-              <span className="text-[10px] text-amber-700/80">Awaiting Review</span>
+              <p className="text-2xl font-black text-amber-600 dark:text-amber-400 mt-1">{stats.pending}</p>
+              <span className="text-[10px] text-amber-700/80 dark:text-amber-400/80">Awaiting Review</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-blue-200 bg-blue-50/20 shadow-2xs">
-              <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider flex items-center gap-1">
-                <UserCheck className="w-3 h-3 text-blue-600" /> Interviewed
+            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/20 dark:bg-blue-950/20 shadow-2xs">
+              <span className="text-[11px] font-bold text-blue-700 dark:text-blue-400 uppercase tracking-wider flex items-center gap-1">
+                <UserCheck className="w-3 h-3 text-blue-600 dark:text-blue-400" /> Interviewed
               </span>
-              <p className="text-2xl font-black text-blue-600 mt-1">{stats.interviewed}</p>
-              <span className="text-[10px] text-blue-700/80">Evaluated</span>
+              <p className="text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">{stats.interviewed}</p>
+              <span className="text-[10px] text-blue-700/80 dark:text-blue-400/80">Evaluated</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-emerald-200 bg-emerald-50/20 shadow-2xs">
-              <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider flex items-center gap-1">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Accepted
+            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 bg-emerald-50/20 dark:bg-emerald-950/20 shadow-2xs">
+              <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider flex items-center gap-1">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600 dark:text-emerald-400" /> Accepted
               </span>
-              <p className="text-2xl font-black text-emerald-600 mt-1">{stats.accepted}</p>
-              <span className="text-[10px] text-emerald-700/80">Council Inductees</span>
+              <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">{stats.accepted}</p>
+              <span className="text-[10px] text-emerald-700/80 dark:text-emerald-400/80">Council Inductees</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-rose-200 bg-rose-50/20 shadow-2xs">
-              <span className="text-[11px] font-bold text-rose-700 uppercase tracking-wider flex items-center gap-1">
-                <XCircle className="w-3 h-3 text-rose-600" /> Declined
+            <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-rose-200 dark:border-rose-900/60 bg-rose-50/20 dark:bg-rose-950/20 shadow-2xs">
+              <span className="text-[11px] font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wider flex items-center gap-1">
+                <XCircle className="w-3 h-3 text-rose-600 dark:text-rose-400" /> Declined
               </span>
-              <p className="text-2xl font-black text-rose-600 mt-1">{stats.declined}</p>
-              <span className="text-[10px] text-rose-700/80">Not Selected</span>
+              <p className="text-2xl font-black text-rose-600 dark:text-rose-400 mt-1">{stats.declined}</p>
+              <span className="text-[10px] text-rose-700/80 dark:text-rose-400/80">Not Selected</span>
             </div>
 
-            <div className="bg-slate-900 text-white p-4 rounded-2xl border border-slate-800 shadow-2xs">
+            <div className="bg-slate-900 dark:bg-slate-900 text-white p-4 rounded-2xl border border-slate-800 shadow-2xs">
               <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider flex items-center gap-1">
                 <TrendingUp className="w-3 h-3 text-amber-400" /> Selectivity
               </span>
@@ -297,7 +297,7 @@ export const AdminDashboardPage = () => {
         )}
 
         {/* Interactive Controls & Filters Toolbar */}
-        <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-2xs space-y-4">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 sm:p-5 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
             {/* Search Input (5 cols) */}
             <div className="md:col-span-5 relative">
@@ -307,7 +307,7 @@ export const AdminDashboardPage = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search candidates by name, email, roll number, or domain..."
-                className="w-full pl-9 pr-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                className="w-full pl-9 pr-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
               />
               {searchTerm && (
                 <button
@@ -324,7 +324,7 @@ export const AdminDashboardPage = () => {
               <select
                 value={filterYear}
                 onChange={(e) => setFilterYear(e.target.value)}
-                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium"
+                className="w-full px-3 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-slate-900 dark:text-white"
               >
                 <option value="All">All Years</option>
                 <option value="FE">First Year (FE)</option>
@@ -389,11 +389,11 @@ export const AdminDashboardPage = () => {
         </div>
 
         {/* Interactive Data Table */}
-        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-xs">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-50/80 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-slate-600">
+                <tr className="bg-slate-50/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-700 text-[11px] font-extrabold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                   <th className="py-4 px-4 sm:px-6">Candidate / Contact</th>
                   <th className="py-4 px-4">Academic Year & Dept</th>
                   <th className="py-4 px-4">Preferred Domain</th>
@@ -402,7 +402,7 @@ export const AdminDashboardPage = () => {
                   <th className="py-4 px-4 sm:px-6 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs sm:text-sm">
                 {loading ? (
                   <tr>
                     <td colSpan="6" className="py-12 text-center text-slate-400">
@@ -411,7 +411,7 @@ export const AdminDashboardPage = () => {
                   </tr>
                 ) : filteredApps.length === 0 ? (
                   <tr>
-                    <td colSpan="6" className="py-12 text-center text-slate-500">
+                    <td colSpan="6" className="py-12 text-center text-slate-500 dark:text-slate-400">
                       No applications match the selected criteria.
                     </td>
                   </tr>
@@ -430,7 +430,7 @@ export const AdminDashboardPage = () => {
                     return (
                       <tr
                         key={appId}
-                        className="hover:bg-slate-50/80 transition-colors group"
+                        className="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors group"
                       >
                         {/* Candidate Column */}
                         <td className="py-3.5 px-4 sm:px-6">
@@ -439,15 +439,15 @@ export const AdminDashboardPage = () => {
                               {initials}
                             </div>
                             <div className="min-w-0">
-                              <p className="font-extrabold text-slate-900 truncate">
+                              <p className="font-extrabold text-slate-900 dark:text-white truncate">
                                 {app.name}
                               </p>
-                              <div className="flex items-center space-x-2 text-[11px] text-slate-500 truncate">
+                              <div className="flex items-center space-x-2 text-[11px] text-slate-500 dark:text-slate-400 truncate">
                                 <span>{app.email}</span>
                                 {app.rollNumber && (
                                   <>
                                     <span>•</span>
-                                    <span className="font-mono text-slate-600">{app.rollNumber}</span>
+                                    <span className="font-mono text-slate-600 dark:text-slate-300">{app.rollNumber}</span>
                                   </>
                                 )}
                               </div>
@@ -458,10 +458,10 @@ export const AdminDashboardPage = () => {
                         {/* Year & Dept */}
                         <td className="py-3.5 px-4">
                           <div className="space-y-1">
-                            <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-800 border border-slate-300">
+                            <span className="inline-block px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">
                               {app.year}
                             </span>
-                            <p className="text-[11px] text-slate-600 font-medium truncate max-w-[160px]">
+                            <p className="text-[11px] text-slate-600 dark:text-slate-400 font-medium truncate max-w-[160px]">
                               {app.department}
                             </p>
                           </div>
@@ -469,13 +469,13 @@ export const AdminDashboardPage = () => {
 
                         {/* Domain Preference */}
                         <td className="py-3.5 px-4">
-                          <span className="inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-200">
+                          <span className="inline-block px-2.5 py-1 rounded-lg text-xs font-semibold bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
                             {app.domainPreference || 'General'}
                           </span>
                         </td>
 
                         {/* Date Applied */}
-                        <td className="py-3.5 px-4 text-xs text-slate-500 font-mono">
+                        <td className="py-3.5 px-4 text-xs text-slate-500 dark:text-slate-400 font-mono">
                           {app.dateApplied
                             ? new Date(app.dateApplied).toLocaleDateString('en-US', {
                                 month: 'short',

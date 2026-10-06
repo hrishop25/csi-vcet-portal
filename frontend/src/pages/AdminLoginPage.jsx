@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Lock, Mail, ArrowRight, AlertCircle, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Lock, Mail, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import ThemeToggle from '../components/ThemeToggle';
 
 export const AdminLoginPage = ({ onSuccess, onCancel }) => {
   const [email, setEmail] = useState('');
@@ -31,15 +32,18 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
   };
 
   return (
-    <div className="min-h-[80vh] flex items-center justify-center p-4 bg-slate-100">
-      <div className="max-w-md w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+    <div className="min-h-[85vh] flex items-center justify-center p-4 bg-slate-100 dark:bg-slate-950 transition-colors duration-200">
+      <div className="max-w-md w-full bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
         {/* Card Header */}
-        <div className="bg-slate-900 text-white p-7 text-center space-y-2 relative">
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-700 to-indigo-800 p-2 mx-auto flex items-center justify-center shadow-lg border border-blue-500/30">
-            <ShieldCheck className="w-8 h-8 text-amber-400" />
+        <div className="bg-slate-900 dark:bg-slate-950 text-white p-7 text-center space-y-2 relative border-b border-slate-800">
+          <div className="absolute top-4 right-4">
+            <ThemeToggle compact={true} />
           </div>
-          <h2 className="text-2xl font-extrabold tracking-tight">Admin & Core Portal</h2>
-          <p className="text-xs text-slate-300">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-700 to-indigo-900 p-2 mx-auto flex items-center justify-center shadow-lg border border-blue-500/30">
+            <img src="/csi-medallion.svg" alt="Medallion" className="w-12 h-12 object-contain" />
+          </div>
+          <h2 className="font-collegiate-serif text-2xl font-extrabold tracking-tight">Admin & Core Portal</h2>
+          <p className="text-xs text-slate-300 font-sans">
             Computer Society of India • VCET Student Chapter
           </p>
           <div className="pt-1">
@@ -52,27 +56,27 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
         {/* Card Body */}
         <div className="p-7 space-y-5">
           {error && (
-            <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 text-xs flex items-center space-x-2">
+            <div className="p-3.5 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 rounded-xl text-rose-700 dark:text-rose-300 text-xs flex items-center space-x-2">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
           )}
 
           {/* 1-Click Demo Credentials Quick Fill Banner */}
-          <div className="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200 text-amber-900 text-xs flex items-center justify-between">
+          <div className="p-3.5 rounded-2xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/60 text-amber-900 dark:text-amber-300 text-xs flex items-center justify-between">
             <div>
-              <p className="font-bold flex items-center space-x-1 text-amber-950">
-                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+              <p className="font-bold flex items-center space-x-1 text-amber-950 dark:text-amber-200">
+                <Sparkles className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                 <span>Demo Admin Credentials</span>
               </p>
-              <p className="text-[11px] text-amber-800 mt-0.5">
+              <p className="text-[11px] text-amber-800 dark:text-amber-400 mt-0.5 font-mono">
                 admin@csivcet.org / CsiVcet@2026
               </p>
             </div>
             <button
               type="button"
               onClick={handleFillDemo}
-              className="px-3 py-1.5 text-[11px] font-bold bg-amber-200 hover:bg-amber-300 text-amber-900 rounded-lg transition-colors shadow-2xs"
+              className="px-3 py-1.5 text-[11px] font-bold bg-amber-200 dark:bg-amber-900/80 hover:bg-amber-300 dark:hover:bg-amber-800 text-amber-900 dark:text-amber-100 rounded-lg transition-colors shadow-2xs"
             >
               Fill Demo
             </button>
@@ -80,7 +84,7 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Admin Official Email
               </label>
               <div className="relative">
@@ -91,13 +95,13 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@csivcet.org"
-                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1">
+              <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                 Security Password
               </label>
               <div className="relative">
@@ -108,7 +112,7 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••••"
-                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
                 />
               </div>
             </div>
@@ -116,7 +120,7 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full py-3 px-4 bg-slate-900 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+              className="w-full py-3 px-4 bg-slate-900 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
             >
               {submitting ? (
                 <span>Authenticating Session...</span>
@@ -133,7 +137,7 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
             <button
               type="button"
               onClick={onCancel}
-              className="text-xs text-slate-500 hover:text-slate-800 transition-colors"
+              className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors"
             >
               ← Back to Chapter Public View
             </button>
@@ -143,4 +147,5 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
     </div>
   );
 };
+
 export default AdminLoginPage;

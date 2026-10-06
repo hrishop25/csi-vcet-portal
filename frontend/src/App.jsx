@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import MembersPage from './pages/MembersPage';
 import ConstitutionPage from './pages/ConstitutionPage';
+import ContactPage from './pages/ContactPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
 import ApplyModal from './components/ApplyModal';
@@ -14,7 +16,7 @@ function AppContent() {
   const [isApplyOpen, setIsApplyOpen] = useState(false);
   const { isAuthenticated } = useAuth();
 
-  // If user navigates to admin but is not authenticated, show login page
+  // Route selector
   const renderCurrentView = () => {
     switch (activeView) {
       case 'home':
@@ -32,6 +34,8 @@ function AppContent() {
         );
       case 'constitution':
         return <ConstitutionPage />;
+      case 'contact':
+        return <ContactPage />;
       case 'admin-login':
         return (
           <AdminLoginPage
@@ -60,15 +64,15 @@ function AppContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 font-sans">
-      {/* Top Navigation */}
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-200">
+      {/* Top Collegiate Navigation (Matches "The Columns Society" header & center medallion) */}
       <Navbar
         activeView={activeView}
         setActiveView={setActiveView}
         onOpenApply={() => setIsApplyOpen(true)}
       />
 
-      {/* Main View Area */}
+      {/* Main Content Area */}
       <main className="flex-1">
         {renderCurrentView()}
       </main>
@@ -80,7 +84,7 @@ function AppContent() {
         onSuccess={() => {}}
       />
 
-      {/* Footer (shown on all public views and login) */}
+      {/* Collegiate Institutional Footer with Theme Toggle */}
       <Footer
         setActiveView={setActiveView}
         onOpenApply={() => setIsApplyOpen(true)}
@@ -91,8 +95,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <AppContent />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }

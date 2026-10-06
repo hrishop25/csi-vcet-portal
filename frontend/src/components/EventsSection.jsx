@@ -28,14 +28,14 @@ export const EventsSection = ({ onOpenApply }) => {
     : events.filter((e) => e.category === filter || e.status === filter);
 
   return (
-    <section className="py-12 bg-slate-100/70 border-y border-slate-200">
+    <section className="py-12 bg-slate-100/70 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200 dark:border-slate-800">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-blue-700">Flagship Calendar</span>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">Events & Technical Bootcamps</h2>
-            <p className="text-sm text-slate-500 mt-1 max-w-xl">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">Flagship Calendar</span>
+            <h2 className="font-collegiate-serif text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Events & Technical Bootcamps</h2>
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-xl">
               From high-stakes hackathons to in-depth developer bootcamps, explore the events driving tech culture at VCET.
             </p>
           </div>
@@ -49,7 +49,7 @@ export const EventsSection = ({ onOpenApply }) => {
                 className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-colors ${
                   filter === cat
                     ? 'bg-blue-700 text-white shadow-xs'
-                    : 'bg-white text-slate-600 hover:bg-slate-200/80 border border-slate-200'
+                    : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-200/80 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
                 }`}
               >
                 {cat}
@@ -66,7 +66,7 @@ export const EventsSection = ({ onOpenApply }) => {
             {filtered.map((item) => (
               <div
                 key={item.id || item._id}
-                className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
                   {/* Event Thumbnail */}
@@ -94,22 +94,22 @@ export const EventsSection = ({ onOpenApply }) => {
 
                   {/* Body Details */}
                   <div className="p-5">
-                    <h3 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-blue-700 transition-colors">
+                    <h3 className="font-collegiate-serif text-lg font-bold text-slate-900 dark:text-white leading-snug group-hover:text-blue-700 dark:group-hover:text-blue-400 transition-colors">
                       {item.title}
                     </h3>
                     {item.subtitle && (
-                      <p className="text-xs font-semibold text-blue-600 mt-1">{item.subtitle}</p>
+                      <p className="text-xs font-semibold text-blue-600 dark:text-blue-400 mt-1">{item.subtitle}</p>
                     )}
-                    <p className="text-xs text-slate-600 mt-2 line-clamp-3 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 leading-relaxed">
                       {item.description}
                     </p>
 
                     {/* Metadata List */}
-                    <div className="mt-4 pt-4 border-t border-slate-100 space-y-2 text-xs text-slate-600">
+                    <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2 text-xs text-slate-600 dark:text-slate-400">
                       <div className="flex items-center space-x-2">
-                        <Calendar className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                        <Calendar className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
                         <span>{new Date(item.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                        <span className="text-slate-300">•</span>
+                        <span className="text-slate-300 dark:text-slate-600">•</span>
                         <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
                         <span>{item.time}</span>
                       </div>
@@ -125,7 +125,7 @@ export const EventsSection = ({ onOpenApply }) => {
                 <div className="p-5 pt-0">
                   <button
                     onClick={onOpenApply}
-                    className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-blue-700 text-white text-xs font-bold transition-colors flex items-center justify-center space-x-1.5"
+                    className="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-blue-700 dark:bg-slate-800 dark:hover:bg-blue-600 text-white text-xs font-bold transition-colors flex items-center justify-center space-x-1.5"
                   >
                     <span>{item.status === 'Upcoming' ? 'Register / Express Interest' : 'View Recap & Archive'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />

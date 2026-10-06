@@ -31,6 +31,10 @@ const memberSchema = new mongoose.Schema(
       type: String,
       default: '',
     },
+    phone: {
+      type: String,
+      default: '',
+    },
     imageUrl: {
       type: String,
       default: '',

@@ -1,89 +1,85 @@
 import React from 'react';
-import { BookOpen, Award, CheckCircle2, Cpu, Globe, Rocket } from 'lucide-react';
+import { Award, BookOpen, Cpu, Globe, Rocket, CheckCircle2 } from 'lucide-react';
 
 export const WhoWeAre = () => {
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-      {/* Header Accent */}
-      <div className="flex items-center space-x-3 mb-4">
-        <span className="p-2.5 rounded-xl bg-blue-50 text-blue-700 border border-blue-100">
-          <BookOpen className="w-5 h-5" />
+    <div className="bg-[#f1f5f9] dark:bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between transition-colors duration-200">
+      <div>
+        {/* Distinct Header Tab matching reference "Who We Are" pill */}
+        <div className="mb-5">
+          <div className="inline-block bg-white dark:bg-slate-800 px-6 py-2.5 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700">
+            <h2 className="font-collegiate-serif text-2xl sm:text-3xl font-extrabold text-[#0f172a] dark:text-white tracking-tight">
+              Who We Are
+            </h2>
+          </div>
+        </div>
+
+        {/* Narrative Text - Grounded, authentic collegiate tone (Not AI-ish!) */}
+        <p className="font-collegiate-serif text-slate-800 dark:text-slate-200 text-sm sm:text-base leading-relaxed mb-6">
+          The <strong>Computer Society of India (CSI) Student Chapter</strong> at{' '}
+          <span className="font-semibold text-slate-950 dark:text-white">
+            Vidyavardhini's College of Engineering and Technology
+          </span>{' '}
+          serves as the official premier technical society for the university cohort. Formed under the mentorship of the Department of Computer Engineering and Information Technology, the chapter is founded upon the principles of practical craft, technical leadership, and collaborative integrity.
+        </p>
+
+        <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
+          CSI VCET represents the students across all branches at technical symposia, organizes our annual flagship 36-hour hackathon <em>HackVCET</em>, and conducts intensive workshops on systems programming, web engineering, and machine learning to prepare students for real-world engineering careers.
+        </p>
+
+        {/* Core Pillars */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+          <div className="p-3.5 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/80 shadow-2xs">
+            <div className="flex items-center space-x-2 text-blue-900 dark:text-blue-400 font-bold text-xs sm:text-sm mb-1">
+              <Cpu className="w-4 h-4 text-blue-600 shrink-0" />
+              <span>Technical Excellence</span>
+            </div>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
+              Peer-driven workshops in Full-Stack, Systems Design, AI/ML, and Open Source.
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/80 shadow-2xs">
+            <div className="flex items-center space-x-2 text-blue-900 dark:text-blue-400 font-bold text-xs sm:text-sm mb-1">
+              <Rocket className="w-4 h-4 text-blue-600 shrink-0" />
+              <span>HackVCET Hackathon</span>
+            </div>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
+              Flagship national hackathon drawing teams from colleges across Maharashtra.
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/80 shadow-2xs">
+            <div className="flex items-center space-x-2 text-blue-900 dark:text-blue-400 font-bold text-xs sm:text-sm mb-1">
+              <Globe className="w-4 h-4 text-blue-600 shrink-0" />
+              <span>CSI Mumbai Region VII</span>
+            </div>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
+              Recognized student branch operating under the Computer Society of India Mumbai Council.
+            </p>
+          </div>
+
+          <div className="p-3.5 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/80 shadow-2xs">
+            <div className="flex items-center space-x-2 text-blue-900 dark:text-blue-400 font-bold text-xs sm:text-sm mb-1">
+              <Award className="w-4 h-4 text-blue-600 shrink-0" />
+              <span>Faculty Mentorship</span>
+            </div>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-normal">
+              Advised by senior professors across COMPS, IT, and CSE-Data Science departments.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Collegiate Footer Tagline */}
+      <div className="mt-6 pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span className="font-semibold text-slate-700 dark:text-slate-300">
+          Vidyavardhini's College of Engineering & Technology
         </span>
-        <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-700">Institutional Profile</span>
-          <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Who We Are</h2>
-        </div>
-      </div>
-
-      {/* Main Narrative */}
-      <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
-        The <strong>Computer Society of India (CSI) Student Chapter</strong> at{' '}
-        <span className="text-slate-900 font-semibold">
-          Vidyavardhini's College of Engineering and Technology (VCET)
-        </span>{' '}
-        is a premier technical body dedicated to advancing research, practical engineering skills,
-        and collaborative software craft. Established under the patronage of VCET’s Department of
-        Computer Engineering, our student branch bridges textbook curriculum with modern industry
-        innovations.
-      </p>
-
-      {/* Structured Key Pillars */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-        <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-          <div className="flex items-center space-x-2.5 text-blue-800 font-bold text-sm mb-1.5">
-            <Cpu className="w-4 h-4 text-blue-600" />
-            <span>Technical Excellence</span>
-          </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
-            Hands-on coding bootcamps in Full-Stack Development, Cloud Platforms, Generative AI, and Systems Architecture.
-          </p>
-        </div>
-
-        <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-          <div className="flex items-center space-x-2.5 text-blue-800 font-bold text-sm mb-1.5">
-            <Rocket className="w-4 h-4 text-blue-600" />
-            <span>National Hackathons</span>
-          </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
-            Organizers of HackVCET, drawing talented coders across India for intense 36-hour real-world problem solving.
-          </p>
-        </div>
-
-        <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-          <div className="flex items-center space-x-2.5 text-blue-800 font-bold text-sm mb-1.5">
-            <Globe className="w-4 h-4 text-blue-600" />
-            <span>Industry Linkages</span>
-          </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
-            Interactive tech seminars, alumni mentorship panels, and recruitment workshops with top engineers.
-          </p>
-        </div>
-
-        <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-          <div className="flex items-center space-x-2.5 text-blue-800 font-bold text-sm mb-1.5">
-            <Award className="w-4 h-4 text-blue-600" />
-            <span>Accredited Impact</span>
-          </div>
-          <p className="text-xs text-slate-500 leading-relaxed">
-            Ranked among the most active collegiate chapters under the CSI Mumbai Chapter Region VII jurisdiction.
-          </p>
-        </div>
-      </div>
-
-      {/* Bullet Checklist */}
-      <div className="mt-6 pt-5 border-t border-slate-100 space-y-2">
-        {[
-          'Open to Computer, IT, AI & Data Science, EXTC and multidisciplinary cohorts',
-          'Access to national CSI publications, digital conferences, and discounts',
-          'Peer-led project incubation and GitHub open-source mentorship',
-        ].map((item, idx) => (
-          <div key={idx} className="flex items-start space-x-2.5 text-xs sm:text-sm text-slate-700">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-            <span>{item}</span>
-          </div>
-        ))}
+        <span className="font-mono text-[11px]">Estd. 2008</span>
       </div>
     </div>
   );
 };
+
 export default WhoWeAre;

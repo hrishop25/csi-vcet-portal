@@ -78,7 +78,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="relative bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
+      <div className="relative bg-white dark:bg-slate-900 rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transform transition-all text-slate-800 dark:text-slate-100">
         {/* Modal Header */}
         <div className="bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-900 text-white p-6 sm:p-7 flex justify-between items-start">
           <div className="space-y-1">
@@ -86,7 +86,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               <Sparkles className="w-3.5 h-3.5" />
               <span>Recruitment 2026-27</span>
             </div>
-            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight">
+            <h3 className="font-collegiate-serif text-xl sm:text-2xl font-extrabold tracking-tight">
               Join the CSI VCET Student Council
             </h3>
             <p className="text-xs sm:text-sm text-slate-300">
@@ -105,15 +105,15 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
         <div className="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
           {success ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
+              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-inner">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h4 className="text-2xl font-bold text-slate-900">Application Submitted!</h4>
-              <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              <h4 className="font-collegiate-serif text-2xl font-bold text-slate-900 dark:text-white">Application Submitted!</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
                 Thank you for applying to the CSI VCET Student Chapter. Your application has been logged into the Core Committee review queue. Shortlisted candidates will receive interview details on their registered email.
               </p>
-              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500 max-w-sm mx-auto">
-                Reference Email: <span className="font-bold text-slate-800">{formData.email}</span>
+              <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto">
+                Reference Email: <span className="font-bold text-slate-800 dark:text-slate-200">{formData.email}</span>
               </div>
               <div className="pt-4">
                 <button
@@ -127,7 +127,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {error && (
-                <div className="p-3.5 bg-rose-50 border border-rose-200 text-rose-700 rounded-xl text-xs flex items-center space-x-2">
+                <div className="p-3.5 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 text-rose-700 dark:text-rose-300 rounded-xl text-xs flex items-center space-x-2">
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span>{error}</span>
                 </div>
@@ -136,7 +136,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
               {/* Row 1: Name and Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     Full Name <span className="text-rose-500">*</span>
                   </label>
                   <div className="relative">
@@ -148,13 +148,13 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="e.g. Ronit Sharma"
-                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-850 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                     College / Personal Email <span className="text-rose-500">*</span>
                   </label>
                   <div className="relative">
@@ -166,7 +166,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="ronit.sharma@vcet.edu.in"
-                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 border border-slate-300 rounded-xl focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                      className="w-full pl-9 pr-3 py-2.5 text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-850 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-900 dark:text-white"
                     />
                   </div>
                 </div>
