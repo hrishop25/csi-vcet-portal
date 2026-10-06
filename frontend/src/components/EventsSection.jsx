@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, MapPin, Clock, ArrowUpRight, Sparkles, Tag, Users } from 'lucide-react';
 import { api } from '../services/api';
+import { defaultEvents } from '../data/fallbackData';
 
 export const EventsSection = ({ onOpenApply }) => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState(defaultEvents);
   const [filter, setFilter] = useState('All');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const res = await api.getEvents();
-        if (res.success) {
+        if (res.success && res.data && res.data.length > 0) {
           setEvents(res.data);
         }
       } catch (err) {
-        console.error('Failed to load events:', err);
+        console.warn('Backend unavailable, using bundled flagship events:', err.message);
       } finally {
         setLoading(false);
       }

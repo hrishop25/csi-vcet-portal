@@ -79,21 +79,24 @@ const committeeTableRows = [
   },
 ];
 
+import { defaultMembers } from '../data/fallbackData';
+
 export const MembersPage = ({ onOpenApply }) => {
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState(defaultMembers);
   const [activeCategory, setActiveCategory] = useState('All');
   const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'table'
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMembers = async () => {
       try {
         const res = await api.getMembers();
-        if (res.success) {
+        if (res.success && res.data && res.data.length > 0) {
           setMembers(res.data);
         }
       } catch (err) {
-        console.error('Failed to load members:', err);
+        // Keeps defaultMembers intact if API is offline
+        console.warn('Backend unavailable, using bundled council roster:', err.message);
       } finally {
         setLoading(false);
       }
