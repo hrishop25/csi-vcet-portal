@@ -52,7 +52,9 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
         skills: skillsArray,
       });
 
-      const refId = 'CSI-VCET-2026-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+      const refId = res?.data?._id 
+        ? `CSI-VCET-${String(res.data._id).slice(-6).toUpperCase()}` 
+        : ('CSI-VCET-2026-' + Math.random().toString(36).substring(2, 7).toUpperCase());
       setAppRefId(refId);
       setSuccess(true);
       toast.success('Application Received!', `Your application (${refId}) is logged for Council Tenure 2026-27.`);

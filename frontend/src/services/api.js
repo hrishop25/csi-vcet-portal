@@ -1,5 +1,5 @@
 // API Client helper for CSI VCET Portal
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('csi_vcet_token');
@@ -13,6 +13,19 @@ const getAuthHeaders = () => {
 };
 
 export const api = {
+  // Base URL helper
+  getBaseUrl: () => API_BASE_URL,
+
+  // Health check
+  checkHealth: async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/health`);
+      return await res.json();
+    } catch (err) {
+      return { success: false, status: 'OFFLINE', error: err.message };
+    }
+  },
+
   // Public recruitment submission
   apply: async (formData) => {
     const res = await fetch(`${API_BASE_URL}/apply`, {
@@ -115,4 +128,29 @@ export const api = {
   },
 
   exportCSVUrl: `${API_BASE_URL}/applications/export/csv`,
+
+  getExportCSVUrl: () => {
+    const token = localStorage.getItem('csi_vcet_token');
+    return `${API_BASE_URL}/applications/export/csv${token ? `?token=${token}` : ''}`;
+  },
+
+  exportCSV: async () => {
+    const res = await fetch(`${API_BASE_URL}/applications/export/csv`, {
+      headers: getAuthHeaders(),
+    });
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData.message || 'Failed to export applications CSV');
+    }
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `CSI_VCET_Recruitment_Applications_${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.URL.revokeObjectURL(url);
+    return true;
+  },
 };

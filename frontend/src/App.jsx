@@ -53,7 +53,7 @@ function AppContent() {
             />
           );
         }
-        return <AdminDashboardPage />;
+        return <AdminDashboardPage onLogout={() => setActiveView('home')} />;
       default:
         return (
           <HomePage
