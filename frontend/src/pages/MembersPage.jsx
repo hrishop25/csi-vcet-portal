@@ -242,30 +242,44 @@ export const MembersPage = ({ onOpenApply }) => {
 
             {/* Members Cards Grid */}
             {loading ? (
-              <div className="text-center py-20 text-slate-400">Loading chapter members...</div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {[1, 2, 3, 4].map((n) => (
+                  <div
+                    key={n}
+                    className="rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-xs space-y-4 p-5"
+                  >
+                    <div className="h-52 rounded-2xl skeleton-shimmer w-full" />
+                    <div className="h-4 skeleton-shimmer rounded-md w-3/4" />
+                    <div className="h-3 skeleton-shimmer rounded-md w-1/2" />
+                    <div className="h-3 skeleton-shimmer rounded-md w-2/3" />
+                  </div>
+                ))}
+              </div>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {filteredMembers.map((member) => (
                   <div
                     key={member.id || member._id}
-                    className="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group"
+                    className="card-interactive bg-white/95 dark:bg-slate-900/85 backdrop-blur-md rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 shadow-xs hover:shadow-xl hover:border-cyan-500/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
                   >
                     <div>
                       {/* Photo Container */}
-                      <div className="relative h-56 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                      <div className="relative h-60 overflow-hidden bg-slate-900">
                         <img
                           src={member.imageUrl || '/actors/rdj.jpg'}
                           alt={member.name}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+
                         <div className="absolute top-3 left-3">
-                          <span className="px-2.5 py-1 rounded-md text-[10px] font-bold bg-slate-900/90 text-white backdrop-blur-md">
+                          <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-slate-950/80 text-white backdrop-blur-md border border-white/10 shadow-sm">
                             {member.category}
                           </span>
                         </div>
                         {member.department && (
                           <div className="absolute top-3 right-3">
-                            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950">
+                            <span className="px-2.5 py-1 rounded-lg text-[10px] font-bold bg-amber-400 text-slate-950 shadow-sm">
                               {member.department}
                             </span>
                           </div>

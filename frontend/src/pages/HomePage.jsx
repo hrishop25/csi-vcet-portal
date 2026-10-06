@@ -10,7 +10,10 @@ export const HomePage = ({ setActiveView, onOpenApply }) => {
   return (
     <div className="space-y-10 pb-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-200">
       {/* 1. Hero Banner Slider (Matching reference image layout & blue photo tint) */}
-      <HeroSlider />
+      <HeroSlider
+        onOpenApply={onOpenApply}
+        onNavigateMembers={() => setActiveView('members')}
+      />
 
       {/* 2. Structured Institutional Layout: "Who We Are" & "Our Pledge" (Matching reference image) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

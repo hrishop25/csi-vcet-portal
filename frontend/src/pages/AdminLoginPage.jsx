@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Lock, Mail, ArrowRight, AlertCircle, Sparkles } from 'lucide-react';
+import { ShieldCheck, Lock, Mail, ArrowRight, AlertCircle, Sparkles, Loader2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import ThemeToggle from '../components/ThemeToggle';
 
@@ -123,7 +123,10 @@ export const AdminLoginPage = ({ onSuccess, onCancel }) => {
               className="w-full py-3 px-4 bg-slate-900 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-600 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
             >
               {submitting ? (
-                <span>Authenticating Session...</span>
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Authenticating Session...</span>
+                </>
               ) : (
                 <>
                   <span>Access Admin Dashboard</span>

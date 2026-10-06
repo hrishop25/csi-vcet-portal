@@ -15,7 +15,7 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200/90 dark:border-slate-800 shadow-xs transition-colors duration-200">
+    <header className="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs transition-colors duration-200">
       {/* Top Institutional Bar */}
       <div className="bg-slate-900 dark:bg-slate-950 text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -95,7 +95,7 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
             {/* Apply Button */}
             <button
               onClick={onOpenApply}
-              className="px-3.5 py-1.5 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-lg shadow-xs hover:shadow transition-all flex items-center space-x-1.5"
+              className="px-4 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500 rounded-xl shadow-xs hover:shadow-md border border-blue-400/30 hover:border-cyan-400 transition-all flex items-center space-x-1.5"
             >
               <Sparkles className="w-3.5 h-3.5 text-amber-300" />
               <span>Apply</span>

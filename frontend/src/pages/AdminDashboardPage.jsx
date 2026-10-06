@@ -23,9 +23,11 @@ import {
 } from 'lucide-react';
 import { api } from '../services/api';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 
 export const AdminDashboardPage = () => {
   const { user, logout } = useAuth();
+  const toast = useToast();
 
   const [applications, setApplications] = useState([]);
   const [stats, setStats] = useState(null);
@@ -45,13 +47,6 @@ export const AdminDashboardPage = () => {
   const [modalUpdating, setModalUpdating] = useState(false);
 
   // Notification Toast
-  const [toastMessage, setToastMessage] = useState('');
-
-  const showToast = (msg) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(''), 3500);
-  };
-
   const loadData = async () => {
     try {
       const [appsRes, statsRes] = await Promise.all([
@@ -68,7 +63,7 @@ export const AdminDashboardPage = () => {
       if (statsRes.success) setStats(statsRes.stats);
     } catch (err) {
       console.error('Failed to load dashboard data:', err);
-      showToast('Error loading recruitment data: ' + err.message);
+      toast.error('Load Error', err.message || 'Error loading recruitment data');
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -101,12 +96,12 @@ export const AdminDashboardPage = () => {
 
     try {
       await api.updateApplicationStatus(appId, { status: newStatus });
-      showToast(`Status updated to ${newStatus}`);
+      toast.success('Status Updated', `Candidate review status set to "${newStatus}"`);
       // Refresh stats
       const statsRes = await api.getDashboardStats();
       if (statsRes.success) setStats(statsRes.stats);
     } catch (err) {
-      showToast('Failed to update status: ' + err.message);
+      toast.error('Status Update Failed', err.message);
       loadData(); // Revert on failure
     }
   };
@@ -124,11 +119,11 @@ export const AdminDashboardPage = () => {
     try {
       await api.deleteApplication(appId);
       setApplications((prev) => prev.filter((a) => a._id !== appId && a.id !== appId));
-      showToast(`Application for ${applicantName} deleted`);
+      toast.info('Application Removed', `Candidate application for ${applicantName} was deleted.`);
       const statsRes = await api.getDashboardStats();
       if (statsRes.success) setStats(statsRes.stats);
     } catch (err) {
-      showToast('Failed to delete application: ' + err.message);
+      toast.error('Delete Failed', err.message);
     }
   };
 
@@ -155,10 +150,10 @@ export const AdminDashboardPage = () => {
           prev.map((a) => (a._id === id || a.id === id ? { ...a, adminNotes: notesInput, interviewSlot: slotInput } : a))
         );
         setSelectedApp((prev) => ({ ...prev, adminNotes: notesInput, interviewSlot: slotInput }));
-        showToast('Review notes & interview slot saved!');
+        toast.success('Notes & Slot Saved', 'Review remarks and scheduled slot updated successfully.');
       }
     } catch (err) {
-      showToast('Failed to save notes: ' + err.message);
+      toast.error('Save Failed', err.message);
     } finally {
       setModalUpdating(false);
     }
@@ -195,14 +190,6 @@ export const AdminDashboardPage = () => {
 
   return (
     <div className="bg-slate-100 dark:bg-slate-950 min-h-screen py-8 text-slate-800 dark:text-slate-100 transition-colors duration-200">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl bg-slate-900 text-white text-xs font-semibold shadow-2xl border border-slate-700 flex items-center space-x-2 animate-bounce">
-          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Top Header Card */}
         <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-xs flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -405,11 +392,39 @@ export const AdminDashboardPage = () => {
               </thead>
               <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs sm:text-sm">
                 {loading ? (
-                  <tr>
-                    <td colSpan="6" className="py-12 text-center text-slate-400">
-                      Loading candidates...
-                    </td>
-                  </tr>
+                  <>
+                    {[1, 2, 3, 4].map((n) => (
+                      <tr key={n} className="animate-pulse">
+                        <td className="py-4 px-4 sm:px-6">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-9 h-9 rounded-xl skeleton-shimmer shrink-0" />
+                            <div className="space-y-1.5 w-36">
+                              <div className="h-3.5 skeleton-shimmer rounded-md w-full" />
+                              <div className="h-2.5 skeleton-shimmer rounded-md w-2/3" />
+                            </div>
+                          </div>
+                        </td>
+                        <td className="py-4 px-4">
+                          <div className="space-y-1.5 w-24">
+                            <div className="h-3.5 skeleton-shimmer rounded-md w-12" />
+                            <div className="h-2.5 skeleton-shimmer rounded-md w-full" />
+                          </div>
+                        </td>
+                        <td className="py-4 px-4">
+                          <div className="h-6 skeleton-shimmer rounded-lg w-20" />
+                        </td>
+                        <td className="py-4 px-4">
+                          <div className="h-3.5 skeleton-shimmer rounded-md w-20" />
+                        </td>
+                        <td className="py-4 px-4">
+                          <div className="h-7 skeleton-shimmer rounded-xl w-28" />
+                        </td>
+                        <td className="py-4 px-4 sm:px-6 text-right">
+                          <div className="h-7 skeleton-shimmer rounded-xl w-16 ml-auto" />
+                        </td>
+                      </tr>
+                    ))}
+                  </>
                 ) : filteredApps.length === 0 ? (
                   <tr>
                     <td colSpan="6" className="py-12 text-center text-slate-500 dark:text-slate-400">

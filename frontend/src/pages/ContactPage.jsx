@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, Send, CheckCircle, Clock } from 'lucide-react';
+import { useToast } from '../context/ToastContext';
 
 export const ContactPage = () => {
+  const toast = useToast();
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSent(true);
+    toast.success('Inquiry Dispatched', 'Your message has been logged for the CSI VCET Secretariat.');
   };
 
   return (
@@ -27,14 +30,14 @@ export const ContactPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Official Campus Contact Info (Matching Image 2 VCET website) */}
+          {/* Left Column: Official Campus Contact Info */}
           <div className="lg:col-span-5 bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
             <div>
               <h3 className="font-heading text-xl font-bold text-slate-900 dark:text-white">
                 Campus Secretariat
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                Department of Computer Engineering & Information Technology
+                Department of Computer Engineering, Information Technology & CSE(DS)
               </p>
             </div>
 
@@ -129,7 +132,7 @@ export const ContactPage = () => {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="e.g. Prof. / Mr. / Ms. Name"
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                   />
                 </div>
 
@@ -143,7 +146,7 @@ export const ContactPage = () => {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="your.email@organization.edu.in"
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                   />
                 </div>
 
@@ -157,7 +160,7 @@ export const ContactPage = () => {
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     placeholder="e.g. Hackathon Sponsorship / Workshop Inquiry"
-                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none"
+                    className="w-full px-3.5 py-2.5 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                   />
                 </div>
 
@@ -171,7 +174,7 @@ export const ContactPage = () => {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Provide details about your query or proposal..."
-                    className="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none"
+                    className="w-full px-3.5 py-2 text-xs sm:text-sm bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-xl focus:bg-white dark:focus:bg-slate-900 focus:outline-none text-slate-900 dark:text-white"
                   />
                 </div>
 

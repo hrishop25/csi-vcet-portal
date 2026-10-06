@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { X, Send, Sparkles, CheckCircle, AlertCircle, User, Mail, Phone, BookOpen, Layers } from 'lucide-react';
+import { X, Send, Sparkles, CheckCircle, AlertCircle, User, Mail, Phone, BookOpen, Layers, Loader2, ArrowRight } from 'lucide-react';
 import { api } from '../services/api';
+import { useToast } from '../context/ToastContext';
 
 export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
+  const toast = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,6 +21,7 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
+  const [appRefId, setAppRefId] = useState('');
 
   if (!isOpen) return null;
 
@@ -44,15 +47,19 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
         ? formData.skills.split(',').map((s) => s.trim()).filter(Boolean)
         : [];
 
-      await api.apply({
+      const res = await api.apply({
         ...formData,
         skills: skillsArray,
       });
 
+      const refId = 'CSI-VCET-2026-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+      setAppRefId(refId);
       setSuccess(true);
+      toast.success('Application Received!', `Your application (${refId}) is logged for Council Tenure 2026-27.`);
       if (onSuccess) onSuccess();
     } catch (err) {
       setError(err.message || 'Submission failed. Please try again.');
+      toast.error('Submission Failed', err.message || 'Please check your connection and try again.');
     } finally {
       setLoading(false);
     }
@@ -104,23 +111,76 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
         {/* Modal Body */}
         <div className="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
           {success ? (
-            <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-inner">
-                <CheckCircle className="w-10 h-10" />
+            <div className="py-6 space-y-6 text-left">
+              <div className="flex items-center space-x-3.5 pb-4 border-b border-slate-200 dark:border-slate-800">
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 rounded-2xl flex items-center justify-center shrink-0 border border-emerald-300 dark:border-emerald-800">
+                  <CheckCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="font-heading text-xl sm:text-2xl font-extrabold text-slate-950 dark:text-white tracking-tight">
+                    Application Successfully Logged
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-sans">
+                    Vidyavardhini's College of Engineering & Technology • CSI Council 2026-27
+                  </p>
+                </div>
               </div>
-              <h4 className="font-heading text-2xl font-bold text-slate-900 dark:text-white">Application Submitted!</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                Thank you for applying to the CSI VCET Student Chapter. Your application has been logged into the Core Committee review queue. Shortlisted candidates will receive interview details on their registered email.
-              </p>
-              <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 text-xs text-slate-500 dark:text-slate-400 max-w-sm mx-auto">
-                Reference Email: <span className="font-bold text-slate-800 dark:text-slate-200">{formData.email}</span>
+
+              {/* Receipt Reference Card */}
+              <div className="p-5 bg-slate-50/90 dark:bg-slate-800/60 rounded-2xl border border-slate-200/90 dark:border-slate-700/80 space-y-3 font-sans text-xs">
+                <div className="flex justify-between items-center pb-2 border-b border-slate-200/70 dark:border-slate-700/70">
+                  <span className="text-slate-500 dark:text-slate-400">Application Reference ID:</span>
+                  <span className="font-mono font-bold text-blue-600 dark:text-blue-400 text-sm tracking-wider">
+                    {appRefId}
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-slate-700 dark:text-slate-300">
+                  <div>
+                    <span className="block text-slate-400 text-[10px] uppercase font-bold">Candidate:</span>
+                    <span className="font-semibold">{formData.name}</span>
+                  </div>
+                  <div>
+                    <span className="block text-slate-400 text-[10px] uppercase font-bold">Department:</span>
+                    <span className="font-semibold">{formData.department} ({formData.year})</span>
+                  </div>
+                  <div>
+                    <span className="block text-slate-400 text-[10px] uppercase font-bold">Target Domain:</span>
+                    <span className="font-semibold">{formData.domainPreference}</span>
+                  </div>
+                  <div>
+                    <span className="block text-slate-400 text-[10px] uppercase font-bold">Confirmation Sent:</span>
+                    <span className="font-semibold truncate block">{formData.email}</span>
+                  </div>
+                </div>
               </div>
-              <div className="pt-4">
+
+              {/* Next Steps Progress Steps */}
+              <div className="space-y-2">
+                <p className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+                  Next Steps in Selection:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                  <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300">
+                    <span className="font-bold block text-[11px]">1. Form Verified</span>
+                    <span className="text-[10px] opacity-80">Application received in admin queue.</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-blue-800 dark:text-blue-300">
+                    <span className="font-bold block text-[11px]">2. Interview Shortlist</span>
+                    <span className="text-[10px] opacity-80">Notification via email within 5 days.</span>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400">
+                    <span className="font-bold block text-[11px]">3. Core Induction</span>
+                    <span className="text-[10px] opacity-80">Formal tenure oath and onboarding.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 flex justify-end">
                 <button
                   onClick={handleResetAndClose}
-                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm shadow-md"
+                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-xs sm:text-sm shadow-md transition-all"
                 >
-                  Close & Return to Home
+                  Return to Chapter Portal
                 </button>
               </div>
             </div>
@@ -322,10 +382,13 @@ export const ApplyModal = ({ isOpen, onClose, onSuccess }) => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-xl shadow-md flex items-center space-x-2 transition-all"
+                  className="px-6 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 disabled:opacity-50 rounded-xl shadow-md flex items-center space-x-2 transition-all"
                 >
                   {loading ? (
-                    <span>Submitting Application...</span>
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      <span>Submitting Application...</span>
+                    </>
                   ) : (
                     <>
                       <Send className="w-3.5 h-3.5" />
