@@ -5,7 +5,7 @@
   "private": true,
   "description": "Production-ready MERN Stack Web Application for CSI VCET Student Chapter",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
+    "build": "cd frontend && npm install && npm run build && node -e \"const fs = require('fs'); if (fs.existsSync('dist') && !fs.existsSync('frontend/dist')) fs.cpSync('dist', 'frontend/dist', {recursive: true}); if (fs.existsSync('frontend/dist') && !fs.existsSync('dist')) fs.cpSync('frontend/dist', 'dist', {recursive: true});\"",
     "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
     "dev:backend": "npm run dev --prefix backend",
     "dev:frontend": "npm run dev --prefix frontend",
