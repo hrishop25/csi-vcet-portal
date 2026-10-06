@@ -15,17 +15,17 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs transition-colors duration-200">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/90 dark:border-slate-800 shadow-xs transition-colors duration-200">
       {/* Top Institutional Bar */}
-      <div className="bg-slate-900 dark:bg-slate-950 text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-slate-800">
+      <div className="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 text-xs py-1.5 px-4 sm:px-8 border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2 font-medium tracking-wide text-[11px] sm:text-xs truncate">
-            <GraduationCap className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-            <span className="font-semibold text-slate-200">
+            <GraduationCap className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0" />
+            <span className="font-semibold text-slate-800 dark:text-slate-200">
               Vidyavardhini's College of Engineering & Technology, Vasai
             </span>
-            <span className="hidden md:inline text-slate-500">•</span>
-            <span className="hidden md:inline text-slate-400">
+            <span className="hidden md:inline text-slate-400 dark:text-slate-600">•</span>
+            <span className="hidden md:inline text-slate-500 dark:text-slate-400">
               Autonomous Institute • NAAC 'A' & NBA Accredited
             </span>
           </div>
@@ -33,13 +33,13 @@ export const Navbar = ({ activeView, setActiveView, onOpenApply }) => {
           <div className="flex items-center space-x-3 shrink-0 text-[11px]">
             <a
               href="tel:+917972019446"
-              className="hidden lg:flex items-center space-x-1 text-slate-400 hover:text-white transition-colors"
+              className="hidden lg:flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
             >
-              <Phone className="w-3 h-3 text-emerald-400" />
+              <Phone className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
               <span>0250 233 8234</span>
             </a>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800/80">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-semibold bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-800/80">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               CSI 2025-26 Active Chapter
             </span>
           </div>
